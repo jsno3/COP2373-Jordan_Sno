@@ -3,7 +3,6 @@
 # Finally, after all tickets are sold, the number of customers will be displayed and a goodbye message will print.
 
 
-
 # Create Variables
 tickets = 20
 buyers = 0
