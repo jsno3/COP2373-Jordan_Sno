@@ -1,0 +1,38 @@
+Jordan Snow 05/13/2024
+
+Description for Chapter 1, 1A:
+	This program is intended to pre-sell 20 tickets to prospective customers.
+	Each customer can only purchase up to 4 tickets. The amount of tickets available will print out after each purchase.
+	Finally, after all tickets are sold, the number of customers will be displayed and a goodbye message will print.
+
+Variables:
+	tickets
+	buyers
+	sold
+
+Functions:
+	main
+
+Steps:
+	Create Variables outside of main
+
+	def main:
+
+		Make tickets and buyers global variables
+
+		If statement to sell tickets if they are available, user inputs the amount of tickets to be purchased
+
+			Nested if statement to check if the requested amount of tickets can be sold
+
+			Nested elif statement to catch if the customer is attempting to buy more than the available amount of tickets, if they are, call main
+
+			Nested elif statement to catch if the requested amount of tickets are valid (if they entered integer is not negative or over 4), if they are not valid, call main
+
+			If statement to check the number of tickets still for sale, if the number is above zero, call main
+
+			Else statement to print the amount of customers and say goodbye. Exit program.
+
+Call main
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow
