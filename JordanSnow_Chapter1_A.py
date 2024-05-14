@@ -17,21 +17,23 @@ def main():
 
     # Create if statement to sell tickets if there is any available
     if tickets <= 20:
-        sold = input('How many tickets would you like to purchase? (up to four can be purchased per customer) ')
+        sold = input('How many tickets would you like to pre-purchase? (up to four can be purchased per customer) ')
 
         # Create if statement to check the amount of tickets the buyer is attempting to purchase
         if 0 < int(sold) <= 4 and int(sold) <= tickets:
             tickets -= int(sold)
             buyers += 1
+            print('Thank you for your purchase!')
             print(f'There are {tickets} tickets remaining to be sold.\n')
 
         # Create an elif statement to catch too many tickets being accidentally purchased
         elif int(sold) > tickets:
-            print(f'There are {tickets} available tickets for sale.')
+            print(f'There are {tickets} ticket(s) available for sale.')
             print(f'Please enter an amount below or equal to {tickets}.\n')
 
-        # Create an elif statement to catch negative number entries
-        elif int(sold) <= 0:
+        # Create an elif statement to catch negative number entries and entries over 4
+        elif int(sold) <= 0 or int(sold) > 4:
+            print(f'There are {tickets} ticket(s) available for sale.')
             print('Please enter an amount between 1 and 4 tickets.\n')
             main()
 
