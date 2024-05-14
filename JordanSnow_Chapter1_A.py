@@ -13,15 +13,22 @@ def main():
 
     # Make tickets and buyers global to avoid errors
     global tickets
+    global buyers
 
     # Create if statement to sell tickets if there is any available
     if tickets <= 20:
         sold = input('How many tickets would you like to purchase? (up to four can be purchased per customer) ')
 
         # Create if statement to check the amount of tickets the buyer is attempting to purchase
-        if 0 < int(sold) <= 4:
+        if 0 < int(sold) <= 4 and int(sold) <= tickets:
             tickets -= int(sold)
+            buyers += 1
             print(f'There are {tickets} tickets remaining to be sold.')
+
+        # Create an elif statement to catch too many tickets being accidentally purchased
+        elif int(sold) > tickets:
+            print(f'There are {tickets} available tickets for sale.')
+            print(f'Please enter an amount below or equal to {tickets}.')
 
         # Create an elif statement to catch negative number entries
         elif int(sold) <= 0:
@@ -32,7 +39,9 @@ def main():
         if tickets > 0:
             main()
         else:
-            print('No more tickets are available for sale, goodbye!')
+            print(f'{buyers} customers pre-purchased tickets.')
+            print('Unfortunately, no more tickets are available for sale.')
+            print('Goodbye!')
             exit()
 
 main()
