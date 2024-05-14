@@ -40,10 +40,13 @@ def main():
         # Create an if statement to check if the tickets are sold out, if they are end the program and print goodbye
         if tickets > 0:
             main()
+
+        # Create an else statement to state the number of customers, say goodbye, and then exit the program
         else:
             print(f'{buyers} customers pre-purchased tickets.')
             print('Unfortunately, no more tickets are available for sale.')
             print('Goodbye!')
             exit()
 
+# Call main
 main()
