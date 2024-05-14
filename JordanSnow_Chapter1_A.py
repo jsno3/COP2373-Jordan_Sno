@@ -23,16 +23,16 @@ def main():
         if 0 < int(sold) <= 4 and int(sold) <= tickets:
             tickets -= int(sold)
             buyers += 1
-            print(f'There are {tickets} tickets remaining to be sold.')
+            print(f'There are {tickets} tickets remaining to be sold.\n')
 
         # Create an elif statement to catch too many tickets being accidentally purchased
         elif int(sold) > tickets:
             print(f'There are {tickets} available tickets for sale.')
-            print(f'Please enter an amount below or equal to {tickets}.')
+            print(f'Please enter an amount below or equal to {tickets}.\n')
 
         # Create an elif statement to catch negative number entries
         elif int(sold) <= 0:
-            print('Please enter an amount between 1 and 4 tickets.')
+            print('Please enter an amount between 1 and 4 tickets.\n')
             main()
 
         # Create an if statement to check if the tickets are sold out, if they are end the program and print goodbye
