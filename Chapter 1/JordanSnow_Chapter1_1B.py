@@ -13,6 +13,8 @@ def sec():
     clean = []
     for phrase in list:
         clean.append(phrase[0:-1])
+    for response in clean:
+        input("Please ask a question. (yes/no)")
 
-    print(clean)
+    # print(clean)
 sec()
