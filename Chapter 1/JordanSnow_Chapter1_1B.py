@@ -10,7 +10,9 @@ main()
 
 def sec():
     list = open("8ball_responses.txt").readlines()
+    clean = []
     for phrase in list:
-        print(phrase)
+        clean.append(phrase[0:-1])
 
+    print(clean)
 sec()
