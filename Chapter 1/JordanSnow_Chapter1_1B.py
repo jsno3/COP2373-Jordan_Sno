@@ -8,10 +8,10 @@ def main():
 
 main()
 
-def sec():
-    import random
+def secondary():
     list = open("8ball_responses.txt").readlines()
     clean = []
+    global clean_dictionary
     clean_dictionary = {}
     x = 1
     for phrase in list:
@@ -19,9 +19,18 @@ def sec():
     for response in clean:
         clean_dictionary[x] = response
         x += 1
-    input("Please ask a question. (yes/no) ")
-    y = random.randrange(1, 12)
-    print(clean_dictionary[y])
 
+secondary()
 
-sec()
+def tertiary():
+    import random
+    y = input("Please ask a question, enter 'goodbye' to stop. (yes/no) ")
+    if y == 'goodbye':
+        print("Thanks for playing! Goodbye!")
+        exit()
+    else:
+        z = random.randrange(1, 13)
+        print(clean_dictionary[z])
+        tertiary()
+
+tertiary()
