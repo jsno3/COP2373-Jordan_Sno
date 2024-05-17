@@ -1,0 +1,68 @@
+Jordan Snow 05/16/2024
+
+Description for Chapter 1, 1B:
+	This program simulates a Magic 8 ball (designed to imitate a toy that displays a random response to yes or no questions.)
+		Main opens (or creates the file if it does not exist) file called "8ball_responses.txt."
+		A list named "responses" is created to easily layout the Magic 8 ball's phrases.
+		"responses" is then iterated through and written to the file: "8ball_responses.txt."
+		The file is closed.
+
+Variables:
+	main: f, responses, response
+
+	secondary: response_list, clean, clean_dictionary (global variable), phrase, response, x
+	
+	tertiary: y and z
+
+Functions:
+	main
+	secondary
+	tertiary
+
+Steps:
+	Create main
+
+	Define main:
+
+		Main opens (or creates the file if it does not exist) file called "8ball_responses.txt."
+		A list named "responses" is created to easily layout the Magic 8 ball's phrases.
+		"responses" is then iterated through and written to the file: "8ball_responses.txt."
+		The file is closed.
+
+Call main
+
+	Create secondary
+
+	Define secondary:
+
+		Secondary opens and returns a list containing each line in the file: "8ball_responses.txt" as a list item and assigns it to the variable: "response_list"
+		Define a list named: "clean" to iterate through "response_list" and strip "\n" from each element.
+		Set "clean_dictionary" to a global variable to be later used in "tertiary."
+		Create an empty dictionary: "clean_dictionary" to match each response with an integer to be later randomly selected and displayed.
+		Create an integer variable: "x" to be used as the keys for "clean_dictionary."
+		Iterate through each string in "response_list" and strip "\n" from each element. Append the resulting string to the list: "clean."
+		Iterate through list: "clean" and assign each response to dictionary: "clean_dictionary" with a unique integer as their key.
+
+Call secondary
+
+	Create tertiary
+
+	Define tertiary:
+
+		Tertiary imports random to be later used to generate a random integer in a specified range.
+		Define a variable: "y" that accepts input to either ask a yes/no question or say "goodbye" to end the program.
+		
+		If/else statement. 
+
+			If variable "y" is equivalent to "goodbye" print: "Thanks for playing! Goodbye!" and exit the program.
+		
+		
+			Else, (variable "y" states anything other than "goodbye"): 
+				Define variable "z" and assign it a random integer in the range of "clean_dictionary."
+				Print a "clean_dictionary" value based off of the generated key.
+				Call tertiary.
+
+Call Tertiary
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow
