@@ -9,6 +9,7 @@ def main():
 main()
 
 def sec():
+    import random
     list = open("8ball_responses.txt").readlines()
     clean = []
     clean_dictionary = {}
@@ -18,8 +19,9 @@ def sec():
     for response in clean:
         clean_dictionary[x] = response
         x += 1
-    #print(clean_dictionary)
-    #input("Please ask a question. (yes/no)")
+    input("Please ask a question. (yes/no) ")
+    y = random.randrange(1, 12)
+    print(clean_dictionary[y])
 
-    # print(clean)
+
 sec()
