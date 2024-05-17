@@ -2,10 +2,10 @@ Jordan Snow 05/16/2024
 
 Description for Chapter 1, 1B:
 	This program simulates a Magic 8 ball (designed to imitate a toy that displays a random response to yes or no questions.)
-		Main opens (or creates the file if it does not exist) file called "8ball_responses.txt."
-		A list named "responses" is created to easily layout the Magic 8 ball's phrases.
-		"responses" is then iterated through and written to the file: "8ball_responses.txt."
-		The file is closed.
+	The responses of the Magic 8 ball will be written to a text file and then read later from that same text file and put into a list.
+	After the responses are in a list they will be cleaned and converted into a dictionary to be assigned as values to a unique integer key (1-12).
+	Finally, the program will display a question to the user, depending on their answer the program will randomly select one of the responses or quit.
+	The program will not end unless closed externally or the user inputs: "goodbye"
 
 Variables:
 	main: f, responses, response
@@ -24,7 +24,7 @@ Steps:
 
 	Define main:
 
-		Main opens (or creates the file if it does not exist) file called "8ball_responses.txt."
+		Main opens (or creates the file if it does not exist) named "8ball_responses.txt."
 		A list named "responses" is created to easily layout the Magic 8 ball's phrases.
 		"responses" is then iterated through and written to the file: "8ball_responses.txt."
 		The file is closed.
