@@ -11,10 +11,15 @@ main()
 def sec():
     list = open("8ball_responses.txt").readlines()
     clean = []
+    clean_dictionary = {}
+    x = 1
     for phrase in list:
         clean.append(phrase[0:-1])
     for response in clean:
-        input("Please ask a question. (yes/no)")
+        clean_dictionary[x] = response
+        x += 1
+    #print(clean_dictionary)
+    #input("Please ask a question. (yes/no)")
 
     # print(clean)
 sec()
