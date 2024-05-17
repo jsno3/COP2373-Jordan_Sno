@@ -1,3 +1,5 @@
+# This program simulates a Magic 8 ball (a fortune telling toy that displays a random response to a yes or no question.)
+#
 
 def main():
     f = open("8ball_responses.txt", "w")
@@ -9,12 +11,12 @@ def main():
 main()
 
 def secondary():
-    list = open("8ball_responses.txt").readlines()
+    response_list = open("8ball_responses.txt").readlines()
     clean = []
     global clean_dictionary
     clean_dictionary = {}
     x = 1
-    for phrase in list:
+    for phrase in response_list:
         clean.append(phrase[0:-1])
     for response in clean:
         clean_dictionary[x] = response
