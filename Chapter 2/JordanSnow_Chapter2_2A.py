@@ -18,10 +18,10 @@ def main():
     spam_score = 0
 
     message = input('Please enter the message you want scanned: ')
-    for word in message:
-        for spam in cap_spam:
-            if spam in message:
-                spam_score += 1
+    for i in range(len(cap_spam)):
+        if cap_spam[i] in message:
+            print(cap_spam[i])
+            spam_score += 1
     print(spam_score)
 
 
