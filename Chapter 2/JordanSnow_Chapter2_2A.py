@@ -6,9 +6,6 @@ def spam():
     cap_spam = []
     for word in sorted_spam_list:
         cap_spam.append(word.title())
-    print(sorted_spam_list)
-    print(cap_spam)
-    print(len(cap_spam))
 
 
 spam()
@@ -16,7 +13,6 @@ spam()
 
 def main():
     global percent_spam
-    message_length = 0
     spam_score = 0
     spam_words_detected = []
 
@@ -37,18 +33,22 @@ def main():
     spam_likelihood = f'Out of the {message_length} words provided, {percent_spam}% of the words/phrases have been marked as common contents of spam emails.'
 
 
-    print(f'\nYour provided email/message was: "{message}"')
-    print(f'Your spam score for this email/message was: {spam_score}/{message_length}')
-    print(spam_likelihood)
-    print(f'Based on this data, {sec()}')
-    print('The following words/phrases within your email/message were detected as potential spam:')
-    for word in spam_words_detected:
-        print(f'"{word}"')
+    print(f'\nYour provided email/message was: "{message}"\n')
+    print(f'Your spam score for this email/message was: {spam_score}/{message_length}\n')
+    if len(spam_words_detected) > 0:
+        print('The following words/phrases within your email/message were detected as potential spam:')
+        for word in spam_words_detected:
+            print(f'"{word}"')
+    else:
+        print('No potential spam words/phrases detected.')
+    print(f'\n{spam_likelihood}\n\nBased on this data, {sec()}\n')
 
     run = input('Would you like to enter another email/message? (y/n) ')
     if run == 'y':
+        print('')
         main()
     elif run == 'Y':
+        print('')
         main()
     else:
         print('\nThank you for using our spam detecting program.\nGoodbye!')
