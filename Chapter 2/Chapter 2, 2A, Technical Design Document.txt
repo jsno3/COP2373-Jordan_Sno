@@ -6,7 +6,7 @@ Description for Chapter 2, 2A:
     After the program has detected the amount of spam word/phrases it will print multiple lines informing the user of their spam score, the word/phrases that were detected as spam, and the likelihood that the text was spam.
 
 Variables:
-    spam: cap_spam (global variable), spam_list, sorted_spam_list, and cap_spam
+    spam: cap_spam (global variable), spam_list, and sorted_spam_list
 
     main: percent_spam (global), spam_score, spam_words_detected, message, cap_message, message_length, cap_spam (global variable), and spam_likelihood
 
