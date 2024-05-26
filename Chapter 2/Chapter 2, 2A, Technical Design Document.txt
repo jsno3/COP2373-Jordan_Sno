@@ -1,0 +1,24 @@
+Jordan Snow 05/24/2024
+
+Description for Chapter 2, 2A:
+    This program is intended to create a list of 30 common words/phrases used in spam messages.
+    The program will then accept an email/message from the user to be "scanned" searching the inputted text for occurrences of the common spam words/phrases in this list.
+    After the program has detected the amount of spam word/phrases it will print multiple lines informing the user of their spam score, the word/phrases that were detected as spam, and the likelihood that the text was spam.
+
+Variables:
+    spam: cap_spam (global variable), spam_list, sorted_spam_list, and cap_spam
+
+    main: percent_spam (global), spam_score, spam_words_detected, message, cap_message, message_length, cap_spam (global variable), and spam_likelihood
+
+    sec: percent_spam (global)
+
+Functions:
+	spam
+	main
+	sec
+
+Steps:
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow
