@@ -24,6 +24,7 @@ def spam():
         # "cap_spam" is appended to with each "word" being capitalized
         cap_spam.append(word.title())
 
+
 # Call spam
 spam()
 
