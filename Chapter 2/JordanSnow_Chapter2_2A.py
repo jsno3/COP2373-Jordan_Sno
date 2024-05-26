@@ -41,6 +41,7 @@ def main():
             print(f'"{word}"')
     else:
         print('No potential spam words/phrases detected.')
+
     print(f'\n{spam_likelihood}\n\nBased on this data, {sec()}\n')
 
     run = input('Would you like to enter another email/message? (y/n) ')

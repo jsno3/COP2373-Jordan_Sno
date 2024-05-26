@@ -18,7 +18,130 @@ Functions:
 	sec
 
 Steps:
+    Create spam
 
+	Define spam:
+
+		Spam states that "cap_spam" will be a global variable.
+		Define a list named "spam_list" to be created and filled with 30 strings that are common spam words/phrases.
+		A variable called "sorted_spam_list" is created to iterate through and be filled with the alphabetically sorted version of "spam_list."
+		An empty list named "cap_spam" is created.
+
+		For loop.
+
+		    For "word" in "sorted_spam_list"
+
+		        "cap_spam" is appended to with each "word" being capitalized.
+
+
+Call spam
+
+	Create main
+
+	Define main:
+
+		Main states that "percent_spam" will be a global variable.
+		Define a variable "spam_score" to be later used to count the number of detected spam words/phrases.
+		Create an empty list named "spam_words_detected" to be later filled with the detected spam words/phrases.
+		Create a variable named "message" that will accept a string input from the user.
+
+		If/else statement.
+
+		    If the length of "message" is equal to 0 (the user did not enter anything) print('Please enter at least one word.') and call main.
+
+		    Else:
+		        Pass to continue the function call.
+
+	    Create a variable called "cap_message" and assign the value of "message" with each word capitalized.
+	    Define a variable named "message_length" and assign the length of each word in "message."
+
+	    For loop.
+
+	        For "i" in the range of the length of "cap_spam" (30)
+
+	            If "cap_spam[i]" in "cap_message"
+
+	                Append "spam_words_detected" with the value of "cap_spam[i]."
+
+	                Add + 1 to the total value of "spam_score."
+
+	    Define "percent_spam" as the result of the rounded value of "spam_score" / "message_length" * 100.
+	    Define spam_likelihood as a formatted string to later be displayed: f'Out of the {message_length} words provided, {percent_spam}% of the words/phrases have been marked as common contents of spam emails.'
+
+        Print the provided email/message that the user entered.
+        Print the "spam_score" of that email/message.
+
+        If/else statement.
+
+            If the length of "spam_word_detected" is greater than 0
+
+                Print('The following words/phrases within your email/message were detected as potential spam:')
+
+                For loop.
+
+                For "word" in "spam_words_detected"
+
+                    Print(f'"{word}"')
+
+            Else, (There is no spam words/phrases detected):
+
+                print('No potential spam words/phrases detected.')
+
+        Print the likelihood that the entered email/message was spam based off of the result of the if/elif statements in sec.
+
+        Define a variable called "run" that accepts an input of a string to later continue or end the program.
+
+        If/else statement.
+
+            If "run" equals 'y':
+
+                Print an empty string '' (for a new line).
+
+                Call main.
+
+            Elif run equals 'Y':
+
+                Print an empty string '' (for a new line).
+
+                Call main.
+
+            Else, (The user entered anything other than 'y' or 'Y'):
+
+                Print('\nThank you for using our spam detecting program.\nGoodbye!').
+
+                Exit the program.
+
+
+    Create sec
+
+    Define sec:
+
+        Sec if a if/elif statement to assign "percent_spam" with a string that will be displayed to the user and tell them how likely the email/message they entered is spam.
+
+        If/elif statement.
+
+                If percent_spam <= 20:
+
+                    Return "the provided email is very unlikely to be spam."
+
+                Elif percent_spam <= 40:
+
+                    Return "the provided email is not likely to be spam."
+
+                Elif percent_spam <= 60:
+
+                    Return "the provided email is probably spam."
+
+                Elif percent_spam <= 80:
+
+                    Return "the provided email is likely to be spam."
+
+                Elif percent_spam <= 100:
+
+                    Return "the provided email is very likely to be spam."
+
+
+Call main
 
 COP2373 Repository link:
 	https://github.com/jsno3/COP2373-Jordan_Snow
