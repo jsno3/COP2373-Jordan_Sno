@@ -20,6 +20,8 @@ def spam():
 
     # For loop to capitalize every word in sorted_spam_list and assign it to cap_spam
     for word in sorted_spam_list:
+
+        # "cap_spam" is appended to with each "word" being capitalized
         cap_spam.append(word.title())
 
 # Call spam
@@ -43,13 +45,18 @@ def main():
 
     # If/else statement
     # If the length of "message" is equal to zero (the user did not enter anything)
-    # print('Please enter at least one word.') and call main
     if len(message) == 0:
+
+        # Print('Please enter at least one word.')
         print('Please enter at least one word.')
+
+        # Call main
         main()
 
-    # Else: Pass to continue the function call
+    # Else statement
     else:
+
+        # Pass to continue the function call
         pass
 
     # Create a variable called "cap_message" and assign the value of "message" with each word capitalized
