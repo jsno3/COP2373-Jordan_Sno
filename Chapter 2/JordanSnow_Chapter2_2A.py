@@ -32,7 +32,6 @@ def main():
     percent_spam = round((spam_score / message_length) * 100)
     spam_likelihood = f'Out of the {message_length} words provided, {percent_spam}% of the words/phrases have been marked as common contents of spam emails.'
 
-
     print(f'\nYour provided email/message was: "{message}"\n')
     print(f'Your spam score for this email/message was: {spam_score}/{message_length}\n')
     if len(spam_words_detected) > 0:
