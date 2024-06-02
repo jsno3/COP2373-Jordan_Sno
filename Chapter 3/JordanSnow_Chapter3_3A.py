@@ -13,7 +13,7 @@ class Expense:
 
 
 def get_expense():
-    expense_type = input("Enter the type of expense (rent, insurance, food, etc.) ")
+    expense_type = input("Enter the type of expense (Rent, Insurance, Food, Etc.) ")
     expense_amount = input("Enter amount of expense ")
     return Expense(expense_type, float(expense_amount))
 
