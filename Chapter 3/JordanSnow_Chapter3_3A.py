@@ -11,26 +11,11 @@ class Expense:
     def __str__(self):
         return f'{self.name}: ${self.amount:.2f}'
 
+
 def get_expense():
     expense_type = input("Enter the type of expense (rent, insurance, food, etc.) ")
-    expense_amount = input("Enter amount of expenses ")
+    expense_amount = input("Enter amount of expense ")
     return Expense(expense_type, float(expense_amount))
-
-
-def main():
-    print("Welcome to the Expense Calculator!")
-
-    expenses = []
-    complete = False
-
-    while not complete:
-        expenses.append(get_expense())
-
-        more_expenses = input("input another expense? (y/n)\n")
-
-        if more_expenses not in ['Y', 'y']:
-            complete = True
-    sec(expenses)
 
 
 def min_function(current_min, min_candidate):
@@ -47,17 +32,30 @@ def max_function(current_max, max_candidate):
         return current_max
 
 
-def total_function(cum: float, next_number: float):
+def total_function(cum, next_number):
     return cum + next_number
 
 
-def sec(expenses):
+def main():
+    print("Welcome to the Expense Calculator!")
+
+    expenses = []
+    complete = False
+
+    while not complete:
+        expenses.append(get_expense())
+
+        more_expenses = input("input another expense? (y/n) ")
+
+        if more_expenses not in ['Y', 'y']:
+            complete = True
+
     total_expense = functools.reduce(total_function, [expense.amount for expense in expenses])
-    largest_expense = functools.reduce(max_function, expenses)
-    smallest_expense = functools.reduce(min_function, expenses)
-    print(f"Your total expenses are: ${total_expense:.2f}")
-    print("Your largest expense is:", largest_expense)
-    print("Your smallest expense is:", smallest_expense)
+    highest_expense = functools.reduce(max_function, expenses)
+    lowest_expense = functools.reduce(min_function, expenses)
+    print(f"Your combined expenses are: ${total_expense:.2f}")
+    print("Your highest expense is", highest_expense)
+    print("Your lowest expense is", lowest_expense)
 
 
 main()
