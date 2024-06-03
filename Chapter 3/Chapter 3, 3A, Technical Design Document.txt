@@ -1,0 +1,133 @@
+Jordan Snow 06/02/2024
+
+Description for Chapter 3, 3A:
+	This program is intended to ask the user for a list of their monthly expenses.
+	When the user is prompted for their expenses, the program will ask for the type of expense as well as the amount of said expense.
+	The program will ask the user if they have more expenses after each entry, and will loop until the do not have anymore expenses.
+	After the user has entered all of their expenses, the program will calculate their expenses combined, their highest expense, and their lowest expense.
+	Finally, the program will display all of this information to the user.
+
+Variables:
+    Expense(class): self.name, self.amount
+
+    get_expense(function): expense_type, expense_amount
+
+    total_function(function): (only parameters were used)
+
+    min_function(function): (only parameters were used)
+
+    max_function(function): (only parameters were used)
+
+    main(function): expenses, complete, more_expenses, total_expense, highest_expense, lowest_expense
+
+Functions:
+	get_expense
+	total_function
+	min_function
+	max_function
+	main
+
+Steps:
+	Import functools
+
+
+	Create a class named "Expense"
+
+        Define class variables and pass in variables: (self, name, amount)
+
+            Create a variable "self.name"
+
+            Create a variable "self.amount"
+
+        Define string function to return formatted version of "self.name" and "self.amount"
+
+
+    Create function named "get_expense"
+
+        Define "get_expense"
+
+            Create a variable named "expense_type" that receives an input from the user for the type of expense
+
+            Create a variable named "expense_amount" that receives an input from the user for the expense amount
+
+            Returns a variable named "Expense" that combines "expense_type" and a float version of "expense_amount"
+
+    Create function named "total_function"
+
+        Define "total_function" passing in parameters "cum" and "next_number"
+
+            Return cum + next_number
+
+
+    Create function named "min_function"
+
+        Define "min_function" passing in parameters "current_min" and "min_candidate"
+
+        If/else statement:
+
+            If the amount of "min_candidate" is less than the amount of "current_min"
+
+                Return "min_candidate"
+
+            Else
+
+                Return "current_min"
+
+
+    Create function named "max_function"
+
+        Define "max_function" passing in parameters "current_max" and "max_candidate"
+
+        If/else statement:
+
+            If the amount of "current_max" is less than the amount of "max_candidate"
+
+                Return "max_candidate"
+
+            Else
+
+                Return "current_max"
+
+
+    Create function named "main"
+
+	    Define "main"
+
+	        Print statement "Welcome to the Expense Calculator!"
+
+	        Print statement "Please enter in your monthly expenses, one at a time."
+
+            Create a variable named "expenses" that is assigned to an empty list
+
+            Create a variable named "complete" that is assigned to a boolean value "False"
+
+            While/if statement
+
+                While "complete" is "False"
+
+                    Append list "expenses" with entries from function "get_expenses"
+
+                    Create a variable "more_expenses" and assign it a string that the user inputs
+
+                    If "more_expenses" does not contain either a "Y" or a "y"
+
+                        Set variable "complete" to boolean value "True"
+
+
+    Define a variable "total_expense" and assign it the result of using the reduce method on "total_function," to sum every expense in expenses
+
+    Define a variable "highest_expense" and assign it the result of using the reduce method and passing in parameters "max_function" and "expenses"
+
+    Define a variable "lowest_expense" and assign it the result of using the reduce method and passing in parameters "min_function" and "expenses"
+
+    Print statement "f'Your combined expenses are: ${total_expense:.2f}''
+
+    Print statement "'Your highest expense is', highest_expense"
+
+    Print statement "'Your lowest expense is', lowest_expense"
+
+
+Call main
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow

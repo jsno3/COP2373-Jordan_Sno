@@ -17,6 +17,9 @@ def get_expense():
     expense_amount = input("Enter amount of expense ")
     return Expense(expense_type, float(expense_amount))
 
+def total_function(cum, next_number):
+    return cum + next_number
+
 
 def min_function(current_min, min_candidate):
     if min_candidate.amount < current_min.amount:
@@ -32,12 +35,9 @@ def max_function(current_max, max_candidate):
         return current_max
 
 
-def total_function(cum, next_number):
-    return cum + next_number
-
-
 def main():
     print("Welcome to the Expense Calculator!")
+    print("Please enter in your monthly expenses, one at a time.")
 
     expenses = []
     complete = False
