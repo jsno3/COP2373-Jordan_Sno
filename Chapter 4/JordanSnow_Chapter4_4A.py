@@ -4,6 +4,7 @@
 
 import time
 
+
 def make_timer(func):
     def wrapper(*args, **kwargs):
         t1 = time.time()
@@ -13,11 +14,19 @@ def make_timer(func):
         return ret_val
     return wrapper
 
+
 @make_timer
 def count_nums(n):
     for i in range(n):
         for j in range(1000):
             pass
+
+
+@make_timer
+def run_2a():
+    spam()
+    main()
+
 
 # Create spam
 def spam():
@@ -39,10 +48,6 @@ def spam():
 
         # "cap_spam" is appended to with each "word" being capitalized
         cap_spam.append(word.title())
-
-
-# Call spam
-spam()
 
 
 # Create main
@@ -158,10 +163,8 @@ def main():
         # Print Goodbye message
         print('\nThank you for using our spam detecting program.\nGoodbye!')
 
-        count_nums = make_timer(count_nums)
-
         # Close the program
-        exit()
+        return
 
 
 # Create sec
@@ -199,8 +202,4 @@ def sec():
         return "the provided email is very likely to be spam."
 
 
-func = [spam(), main(), sec()]
-
-
-# Call main
-main()
+run_2a()
