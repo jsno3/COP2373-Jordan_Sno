@@ -1,0 +1,73 @@
+Jordan Snow 06/23/2024
+
+Description for Chapter 6, 6A:
+	This program is intended to validate phone numbers, social security numbers, and zip codes
+	using regular expressions. Once the program receives input for all three it will display if they
+	are valid entries for the specified type.
+
+Variables:
+	valid_phone_number(function): pattern, phone_number
+
+	valid_social_security_number(function): pattern, ssn
+
+	valid_zip_code(function): pattern, zip_code
+
+	main(function): phone_number, ssn, zip_code
+
+Functions:
+	valid_phone_number	
+
+	valid_social_security_number
+
+	valid_zip_code
+
+	main
+
+Steps:
+	Import re
+
+	
+	Define "valid_phone_number" and pass in variable "phone_number"
+
+		Create a variable "pattern" and set it equal to a raw string that identifies
+    		the acceptable format of an entered "phone_number"
+
+		Return a boolean expression based off of the result of matching the defined "pattern" and entered "phone_number"
+
+
+	Define "valid_social_security_number" and pass in variable "ssn"
+
+		Create a variable "pattern" and set it equal to a raw string that identifies
+	    	the acceptable format of an entered "ssn"
+
+		Return a boolean expression based off of the result of matching the defined "pattern" and entered "ssn"
+
+
+	Define "valid_zip_code" and pass in variable "zip_code"
+
+		Create a variable "pattern" and set it equal to a raw string that identifies
+    		the acceptable format of an entered "zip_code"
+
+		Return a boolean expression based off of the result of matching the defined "pattern" and entered "zip_code"
+
+
+	Define main
+
+		Create variable "phone_number" and set it equal to the input of a phone number from the user
+		
+		Create variable "ssn" and set it equal to the input of a social security number from the user
+
+		Create variable "zip_code" and set it equal to the input of a zip code from the user
+
+		Print True/False answer if the entered "phone_number" is valid
+
+		Print True/False answer if the entered "ssn" is valid
+
+		Print True/False answer if the entered "zip_code" is valid
+		
+
+	Call main
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow

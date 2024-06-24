@@ -39,3 +39,7 @@ Steps:
 	Create dunder method to have "main" not run if my script is imported
 
 	Call main
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow

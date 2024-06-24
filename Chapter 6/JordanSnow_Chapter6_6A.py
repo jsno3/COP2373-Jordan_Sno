@@ -1,6 +1,6 @@
 """This program is intended to validate phone numbers, social security numbers, and zip codes
 using regular expressions. Once the program receives input for all three it will display if they
-are valid entries for the specified type. """
+are valid entries for the specified type."""
 
 # Import the Random Expression module to be used later in the program
 import re
