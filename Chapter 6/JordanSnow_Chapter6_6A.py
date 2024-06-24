@@ -25,3 +25,9 @@ valid_ssn = ['123 45 6789', '987 65 4321', '123-45-6789']
 
 invalid_ssn = ['000 12 3456', '123 45 0000']
 
+for ssn in valid_ssn:
+    print(f'{ssn} is a valid social security number: {valid_ssn(ssn)}')
+
+for ssn in invalid_ssn:
+    print(f'{ssn} is a valid social security number: {valid_ssn(ssn)}')
+
