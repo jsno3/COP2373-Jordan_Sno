@@ -25,7 +25,7 @@ def main():
     # For loop
     for sentence in number_of_sentences:
 
-        # For "sentence" in "number_of_sentences" print(sentence
+        # For "sentence" in "number_of_sentences" print("sentence")
         print(sentence)
 
     # Print a formatted string that displays the number of sentences that the user entered
@@ -34,4 +34,6 @@ def main():
 
 # Create dunder method to have "main" not run if my script is imported
 if __name__ == '__main__':
+
+    # Call main
     main()

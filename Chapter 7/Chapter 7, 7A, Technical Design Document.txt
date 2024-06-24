@@ -1,0 +1,41 @@
+Jordan Snow 06/23/2024
+
+Description for Chapter 7, 7A:
+	This program is intended to define a pattern using regular expressions that will
+	be used to separate and count any number of sentences that the user enters.
+
+Variables:
+	main(function): pattern, entry, number_of_sentences, length
+
+
+Functions:
+	main
+
+Steps:
+	Import re
+
+	
+	Define main
+
+		Create a variable "pattern" and set it equal to a raw string that identifies 
+		the start and the end of a sentence and takes everything in between the two.
+
+
+		Create a variable "entry" and set it equal to a string inputted by the user.
+
+		Create a variable "number_of_sentences" and set it equal to the result of 
+		referencing "entry" with "pattern" and use the flag "DOTALL" to capture sentences on more than one line.
+
+		Create a variable "length" that is set to the value of the length of "number_of_sentences"
+
+		For loop:
+		
+			For "sentence" in "number_of_sentences" print("sentence")
+
+		Print a formatted string that displays the number of sentences that the user entered
+
+
+
+	Create dunder method to have "main" not run if my script is imported
+
+	Call main
