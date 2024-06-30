@@ -10,7 +10,7 @@ def main():
 
     with open('grades.csv', 'w', newline='') as new_file:
 
-        fieldnames = ['first_name', 'last_name', 'exam_1', 'exam_2', 'exam_3']
+        fieldnames = ['First Name', 'Last Name', 'Exam 1', 'Exam 2', 'Exam 3']
 
         csv_writer = csv.DictWriter(new_file, fieldnames=fieldnames)
 
@@ -28,7 +28,7 @@ def main():
 
             exam_3 = int(input("Enter Student's Grade for Exam 3: "))
 
-            d = {'first_name': first, 'last_name': last, 'exam_1': exam_1, 'exam_2': exam_2, 'exam_3': exam_3}
+            d = {'First Name': first, 'Last Name': last, 'Exam 1': exam_1, 'Exam 2': exam_2, 'Exam 3': exam_3}
 
             csv_writer.writerow(d)
 

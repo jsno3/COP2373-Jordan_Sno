@@ -1,12 +1,15 @@
-import csv
+import pandas as pd
 
 
 def main():
-    with open('grades.csv', 'r') as csv_file:
-        csv_reader = csv.reader(csv_file)
 
-        for line in csv_reader:
-            print(line)
+  # Open the CSV file in read mode with 'with' keyword
+  with open('grades.csv', 'r'):
+
+    df = pd.read_csv('grades.csv')
+
+    # Print DataFrame with better formatting
+    print(df.to_string(index=False))
 
 
 main()
