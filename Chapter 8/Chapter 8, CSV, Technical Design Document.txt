@@ -60,16 +60,16 @@ Functions:
 	main
 
 Steps:
-	Import package 'pandas' as 'pd' for further use in the program
+	Import package 'pandas' as 'pd' for later use in the program
 
 	
 	Define main
 
-		Open the CSV file in read mode with 'with' keyword
+		Open the CSV file in read mode with the 'with' keyword
 
-		Set variable 'df' equal to the result of reading the csv file into a DataFrame
+			Set variable 'df' equal to the result of reading the csv file into a DataFrame
 
-		Display DataFrame with better formatting
+			Display DataFrame with better formatting
 
 	
 	Call main
