@@ -1,6 +1,6 @@
 """ The purpose of this program is to allow an instructor to input the number of students
-they wish to enter into a csv file, and then the program will iterate through a loop to enter
-the students first name, last name, and their grades for three separate exams.
+they wish to enter into a CSV file, and then the program will iterate through a loop to enter
+the student's first name, last name, and their grades for three separate exams.
 """
 
 # Import csv to write 'grades.csv' later in program
@@ -13,7 +13,7 @@ def main():
     # Set variable 'entries_amount' equal to the input from the user dictating how many students they wish to enter
     entries_amount = input('How many students are being entered? ')
 
-    # Open or create 'grades.csv' in write mode, set newline='', as new_file
+    # Open 'grades.csv' as 'new_file' in write mode, using the 'with' keyword, and set newline=''
     with open('grades.csv', 'w', newline='') as new_file:
 
         # Define variable 'fieldnames' to be used in when writing the csv file

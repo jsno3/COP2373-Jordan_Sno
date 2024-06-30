@@ -1,0 +1,79 @@
+Jordan Snow 06/29/2024
+
+Description for Programming Exercise CSV (Writer):
+	The purpose of this program is to allow an instructor to input the number of students
+	they wish to enter into a CSV file, and then the program will iterate through a loop to enter
+	the student's first name, last name, and their grades for three separate exams.
+
+Variables:
+	main(function): entries_amount, new_file, fieldnames, csv_writer, first, last, exam_1, exam_2, exam_3, d
+
+
+Functions:
+	main
+
+Steps:
+	Import csv
+
+	
+	Define main
+
+		Set variable 'entries_amount' equal to the input from the user dictating how many students they wish to enter
+
+		Open 'grades.csv' as 'new_file' in write mode, using the 'with' keyword, and set newline=''
+
+			Define variable 'fieldnames' to be used in when writing the csv file
+
+			Define variable 'csv_writer' and set it equal to 'csv.DictWriter(new_file, fieldnames=fieldnames)'
+
+			Write headers (First Name, Last Name, Exam 1, Exam 2, Exam 3) for better organization
+
+			For loop, for 'i' in the range of 'entries_amount' (the number of students to be entered):
+
+				Set variable 'first' equal to the input for string: 'Enter Student's First Name: '
+
+				Set variable 'last' equal to the input for string: 'Enter Student's Last Name: '
+
+				Set variable 'exam_1' equal to the input for string: 'Enter Student's Grade for Exam 1: '
+
+				Set variable 'exam_2' equal to the input for string: 'Enter Student's Grade for Exam 2: '
+
+				Set variable 'exam_3' equal to the input for string: 'Enter Student's Grade for Exam 3: '
+
+				Create variable 'd' and set it equal to a dictionary that assigns the declared fields (keys) with the inputted related data (values)
+
+				Write a new row to 'grades.csv' passing in the dictionary 'd'
+				
+
+	Call main
+
+
+
+
+Description for Programming Exercise CSV (Reader):
+	The purpose of this program is to read the created csv file: 'grades.csv' and display it in a formatted DataFrame
+
+Variables:
+	main(function): df
+
+Functions:
+	main
+
+Steps:
+	Import package 'pandas' as 'pd' for further use in the program
+
+	
+	Define main
+
+		Open the CSV file in read mode with 'with' keyword
+
+		Set variable 'df' equal to the result of reading the csv file into a DataFrame
+
+		Display DataFrame with better formatting
+
+	
+	Call main
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow
