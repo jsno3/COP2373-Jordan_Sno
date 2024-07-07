@@ -202,31 +202,31 @@ def test_func():
     # If/elif/else statement, if 'selection' is '1' call the interest rate method
     if selection == '1':
 
-        # Call the 'interest_rate' method
+        # Print the 'interest_rate' method
         print(test.adjust_interest())
 
     # Elif statement, if 'selection' is '2' call the interest prediction method
     elif selection == '2':
 
-        # Call the 'show_interest_prediction' method
+        # Print the 'show_interest_prediction' method
         print(test.show_interest_prediction())
 
     # Elif statement, if 'selection' is '3' call the 'withdraw' method
     elif selection == '3':
 
-        # Call the 'withdraw' method
+        # Print the 'withdraw' method
         print(test.withdraw())
 
     # Elif statement, if 'selection' is '4' call the 'deposit' method
     elif selection == '4':
 
-        # Call the 'deposit' method
+        # Print the 'deposit' method
         print(test.deposit())
 
     # Elif statement, if 'selection' is '5' call the 'balance' method
     elif selection == '5':
 
-        # Call the 'balance method
+        # print the 'balance' method
         print(test.balance())
 
     # Elif statement, if 'selection' is '6' print 'test' and show the general info for the account
