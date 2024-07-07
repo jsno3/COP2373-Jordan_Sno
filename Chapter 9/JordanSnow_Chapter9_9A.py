@@ -80,7 +80,7 @@ def test_func():
     print('Please Make a Selection for Our Services'
         '\n1 - Adjust Interest Rate '
         '\n2 - Calculate Interest '
-        '\n3 - Withdrawal Funds \n4 - Deposit Funds'
+        '\n3 - Withdraw Funds \n4 - Deposit Funds'
         '\n5 - View Balance \n6 - Exit ')
     selection = input('Enter the corresponding number to the services you require: ')
     if selection == '1':
