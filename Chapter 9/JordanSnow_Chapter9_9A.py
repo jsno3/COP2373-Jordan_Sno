@@ -7,6 +7,7 @@ in a formatted matter. Finally, 'main' and 'test_func' work in conjunction to te
 and methods.
 """
 
+
 # Define class 'BankAcct'
 class BankAcct:
 
@@ -25,20 +26,20 @@ class BankAcct:
         # Assign 'self.interest_rate' to variable 'interest_rate' and convert it to a float
         self.interest_rate = float(interest_rate)
 
-
     # Define __str__(self) to display 'name', 'account_number', 'amount', and 'interest_rate' in a formatted manner
     def __str__(self):
 
         # Return a formatted string containing key variables 'name', 'account_number', 'amount', and 'interest_rate'
-        return f'Hello {self.name} \nYour Account Number is {self.account_number} \nYour Balance is {self.amount} \nYour Interest Rate is {self.interest_rate}'
-
-
+        return (f'Hello {self.name} \nYour Account Number is {self.account_number} '
+                f'\nYour Balance is {self.amount} \nYour Interest Rate is {self.interest_rate}')
 
     # Define a method to change the interest rate named 'adjust_interest
     def adjust_interest(self):
 
-        # Set variable 'adj_int' equal to the input that the user wishes to change their interest rate to (convert it to a float if necessary)
-        adj_int = float(input(f'{self.name.title()}, Please enter the amount of interest you would like on your account: '))
+        # Set variable 'adj_int' equal to the input that the user wishes to
+        # change their interest rate to (convert it to a float if necessary)
+        adj_int = float(input(f'{self.name.title()}, '
+                              f'Please enter the amount of interest you would like on your account: '))
 
         # If/else statement, if adj_int is less than 0 or greater than 1.0
         if 0 > adj_int > 1.0:
@@ -56,8 +57,7 @@ class BankAcct:
             self.interest_rate = adj_int
 
         # Return a formatted string that displays the updated Interest Rate
-        return f'Your Interest Rate is now: {self.interest_rate}'
-
+        return 'Your Interest Rate is now: ' + str(self.interest_rate)*100 + '%'
 
     # Define a method to calculate the accrued Interest within an entered amount of days
     def show_interest_prediction(self):
@@ -68,38 +68,44 @@ class BankAcct:
         # Set variable 'r' equal to 'self.interest_rate', convert it to a float if necessary
         r = float(self.interest_rate)
 
-        # Set variable 't' equal to the input from the user dictating the number of days they wish to calculate interest for, convert it to a float if necessary
+        # Set variable 't' equal to the input from the user dictating the number of days
+        # they wish to calculate interest for, convert it to a float if necessary
         t = float(input("Enter the amount of days that you wish to calculate interest for: "))
 
         # Set variable 'simple_interest' equal to equation (p * t * r)/100 ('principle' * 'time' * 'interest rate')/100
         simple_interest = (p * t * r)/100
 
-        # If/else statement, if their current balance is at or below zero print a statement to let them know they are not eligible for interest
+        # If/else statement, if their current balance is at or below zero print a statement
+        # to let them know they are not eligible for interest
         if p <= 0:
 
             # Return string to inform user of the ineligibility of interest
             return 'Your account is not eligible for interest at this time.'
 
-        # If/else statement, if the user's account balance is not negative or zero, return a formatted string with the calculated interest
+        # If/else statement, if the user's account balance is not negative or zero,
+        # return a formatted string with the calculated interest
         else:
 
             # Return a formatted string with the calculated interest for their account
-            return (f'The Calculated Simple Interest Based on Your Current Balance and Interest Rate is ${simple_interest}.')
-
+            return (f'The Calculated Simple Interest Based on Your Current Balance and '
+                    f'Interest Rate is ${simple_interest}.')
 
     # Define a method to allow deposits to the user's account
     def deposit(self):
 
-        # Define variable 'deposit' and set it equal to the input from the user of how much they would like to deposit, convert it to a float if necessary
+        # Define variable 'deposit' and set it equal to the input from the user of how much
+        # they would like to deposit, convert it to a float if necessary
         deposit = float(input(f'{self.name.title()}, please enter the amount you would like to deposit: '))
 
-        # If/else statement, if the 'deposit' is less than or equal to zero, return a statement informing the user of the limitations of deposits
+        # If/else statement, if the 'deposit' is less than or equal to zero,
+        # return a statement informing the user of the limitations of deposits
         if deposit <= 0:
 
             # Return string to inform user they must enter a positive amount
             return 'You must deposit a positive amount.'
 
-        # If/else statement, if the deposit is positive print a statement informing the customer it was successful and then add the amount to their account
+        # If/else statement, 'deposit' is positive, print a statement informing the customer
+        # it was successful and then add the amount to their account
         else:
 
             # Print statement thanking the user for their deposit
@@ -111,20 +117,22 @@ class BankAcct:
         # Return a formatted string displaying the updated balance on the account
         return f'Your Balance is now: ${self.amount}'
 
-
     # Define a method to allow withdrawals to the user's account
     def withdraw(self):
 
-        # Set variable 'withdraw' equal to the input from the user dictating what amount they would like to remove from their account, convert it to a float if necessary
+        # Set variable 'withdraw' equal to the input from the user dictating what amount they would like to
+        # remove from their account, convert it to a float if necessary
         withdraw = float(input(f'{self.name.title()}, please enter how much you would like to withdraw: '))
 
-        # If/else statement, if the amount in their account is lower than the amount they would like to withdraw or a negative number, return a string to inform them this will not be possible
+        # If/else statement, if the amount in their account is lower than the amount they would like to withdraw
+        # or a negative number, return a string to inform them this will not be possible
         if self.amount < withdraw or withdraw < 0:
 
             # Return string to inform user that the 'deposit' amount must be lower than their balance and not negative
             return 'You cannot withdraw that amount.'
 
-        # If/else statement, if the 'withdraw' amount is lower than their balance and not negative, print a confirmation statement and update the account's balance
+        # If/else statement, if the 'withdraw' amount is lower than their balance and not negative, print a
+        # confirmation statement and update the account's balance
         else:
 
             # Display a formatted string informing the user they have successfully withdrawn the specified amount
@@ -135,7 +143,6 @@ class BankAcct:
 
         # Return a formatted string to the user to show their updated balance
         return f'Your Balance is now: ${self.amount}'
-
 
     # Define a method that will return the balance of the user's account
     def balance(self):
@@ -156,7 +163,8 @@ def main():
     # Set variable 'name' equal to a string from the user declaring their name
     name = input('What is your name? ')
 
-    # Set variable 'account' equal to a string from the user declaring their account number (up to 9 digits parameter just for flair, not implemented in any way)
+    # Set variable 'account' equal to a string from the user declaring their account number
+    # (up to 9 digits parameter just for flair, not implemented in any way)
     account = input('What is your account number? (up to 9 digits): ')
 
     # Set variable 'account' equal to a string from the user declaring the amount in their account
@@ -172,59 +180,76 @@ def main():
     print(test)
 
 
-# Call main
+# Call 'main'
 main()
 
 
 # Define function 'test_func' to test class 'BankAcct'
 def test_func():
 
-
+    # Print multiple strings that outline the services offered
     print('Please Make a Selection for Our Services'
-        
-        '\n1 - Adjust Interest Rate '
-        '\n2 - Calculate Interest '
-        '\n3 - Withdraw Funds \n4 - Deposit Funds'
-        '\n5 - View Balance \n6 - General Account Info'
-        '\n7 - Exit ')
+          '\n1 - Adjust Interest Rate '
+          '\n2 - Calculate Interest '
+          '\n3 - Withdraw Funds \n4 - Deposit Funds'
+          '\n5 - View Balance \n6 - General Account Info'
+          '\n7 - Exit ')
 
+    # Set variable 'selection' equal to the inputted value from the user (to make a selection from the given options)
     selection = input('Enter the corresponding number to the services you require: ')
 
+    # If/elif/else statement, if 'selection' is '1' call the interest rate method
     if selection == '1':
 
-        print(test.adjust_interest())
+        # Call the 'interest_rate' method
+        test.adjust_interest()
 
+    # Elif statement, if 'selection' is '2' call the interest prediction method
     elif selection == '2':
 
-        print(test.show_interest_prediction())
+        # Call the 'show_interest_prediction' method
+        test.show_interest_prediction()
 
+    # Elif statement, if 'selection' is '3' call the 'withdraw' method
     elif selection == '3':
 
-        print(test.withdraw())
+        # Call the 'withdraw' method
+        test.withdraw()
 
+    # Elif statement, if 'selection' is '4' call the 'deposit' method
     elif selection == '4':
 
-        print(test.deposit())
+        # Call the 'deposit' method
+        test.deposit()
 
+    # Elif statement, if 'selection' is '5' call the 'balance' method
     elif selection == '5':
 
-        print(test.balance())
+        # Call the 'balance method
+        test.balance()
 
+    # Elif statement, if 'selection' is '6' print 'test' and show the general info for the account
     elif selection == '6':
 
+        # Print 'test'
         print(test)
 
+    # Elif statement, if 'selection' is '7' exit the program
     elif selection == '7':
 
+        # Exit the program
         exit()
 
+    # Else statement, print 'That is not a valid selection and restart the test function
     else:
 
+        # Print 'That is not a valid selection'
         print('That is not a valid selection')
 
+        # Call 'test_func'
         test_func()
-
+    # Call 'test_func'
     test_func()
 
-
+# Call 'test_func'
 test_func()
