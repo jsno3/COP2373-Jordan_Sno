@@ -57,7 +57,7 @@ class BankAcct:
             self.interest_rate = adj_int
 
         # Return a formatted string that displays the updated Interest Rate
-        return 'Your Interest Rate is now: ' + str(float((self.interest_rate)*100)) + '%'
+        return 'Your Interest Rate is now: ' + str((self.interest_rate)*100) + '%'
         # return self.interest_rate
 
     # Define a method to calculate the accrued Interest within an entered amount of days
