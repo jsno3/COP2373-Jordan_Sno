@@ -42,7 +42,7 @@ class BankAcct:
                               f'Please enter the amount of interest you would like on your account: '))
 
         # If/else statement, if adj_int is less than 0 or greater than 1.0
-        if 0 > adj_int > 1.0:
+        if adj_int <= 0 or adj_int > 1.0:
 
             # Print statement to let the user know the limitations to interest rates
             print('Your Interest Rate cannot be greater than 100% or lower than 0%.')
@@ -57,7 +57,8 @@ class BankAcct:
             self.interest_rate = adj_int
 
         # Return a formatted string that displays the updated Interest Rate
-        return 'Your Interest Rate is now: ' + str(self.interest_rate)*100 + '%'
+        return 'Your Interest Rate is now: ' + str(float((self.interest_rate)*100)) + '%'
+        # return self.interest_rate
 
     # Define a method to calculate the accrued Interest within an entered amount of days
     def show_interest_prediction(self):
@@ -202,31 +203,31 @@ def test_func():
     if selection == '1':
 
         # Call the 'interest_rate' method
-        test.adjust_interest()
+        print(test.adjust_interest())
 
     # Elif statement, if 'selection' is '2' call the interest prediction method
     elif selection == '2':
 
         # Call the 'show_interest_prediction' method
-        test.show_interest_prediction()
+        print(test.show_interest_prediction())
 
     # Elif statement, if 'selection' is '3' call the 'withdraw' method
     elif selection == '3':
 
         # Call the 'withdraw' method
-        test.withdraw()
+        print(test.withdraw())
 
     # Elif statement, if 'selection' is '4' call the 'deposit' method
     elif selection == '4':
 
         # Call the 'deposit' method
-        test.deposit()
+        print(test.deposit())
 
     # Elif statement, if 'selection' is '5' call the 'balance' method
     elif selection == '5':
 
         # Call the 'balance method
-        test.balance()
+        print(test.balance())
 
     # Elif statement, if 'selection' is '6' print 'test' and show the general info for the account
     elif selection == '6':
