@@ -1,5 +1,5 @@
 """ The purpose of this program is to create a class named "Money" that inherits "Decimal"
-and expand upon its functionality. The class has been extended to support basic addition,
+and expands upon its functionality. The class has been extended to support basic addition,
 subtraction, multiplication, and division. Also, two functions 'main' and 'test_func' have been
 added to work in conjunction with one another to test the class's functionality and methods.
 """
@@ -107,24 +107,24 @@ def test_func():
     # Set variable 'selection' equal to the inputted value from the user (to make a selection from the given options)
     selection = input('Please make a selection (enter numbers 1-6): ')
 
-    # If/elif/else statement, if 'selection' is '1' call the add method
+    # If/elif/else statement, if 'selection' is '1' call the 'add' method
     if selection == '1':
 
         # Set variable 'v' equal to a string converted to a 'Decimal' that specifies how much the user would like to
         # add to the existing amount of money
         v = Decimal(input("Enter the amount you would like to add: "))
 
-        # Print the result of variable 'test' added to variable 'x' through the 'add' method
+        # Print the result of variable 'test' added to variable 'v' through the 'add' method
         print(test + v)
 
-    # Elif statement, if 'selection' is '2' call the sub method
+    # Elif statement, if 'selection' is '2' call the 'sub' method
     elif selection == '2':
 
         # Set variable 'v' equal to a string converted to a 'Decimal' that specifies how much the user would like to
         # subtract from the existing amount of money
         v = Decimal(input("Enter the amount you would like to subtract: "))
 
-        # Print the result of variable 'x' subtracted from variable 'test' through the 'sub' method
+        # Print the result of variable 'v' subtracted from variable 'test' through the 'sub' method
         print(test - v)
 
     # Elif statement, if 'selection' is '3' call the 'mul' method

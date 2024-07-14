@@ -1,0 +1,207 @@
+Jordan Snow 07/14/2024
+
+Description for Chapter 10, 10B:
+	The purpose of this program is to create a class named 'BankAcct' that can hold information
+	including name, account number, amount, and interest rate. Additionally, this class has methods to
+	adjust the interest rate, withdraw and deposit funds (has been replaced with 'add' and 'sub' methods from 'Money'), 
+	give the current balance, and predict interest based off of the user's current balance, interest rate, 
+	and a specified time frame (in days). 'BankAcct' also has the ability to display the user's name, 
+	account number, balance, and interest rate in a formatted matter. Finally, 'main' and 'test_func' 
+	work in conjunction to test the class's functionality and methods.
+
+Variables:
+	Money(Decimal)(class w/ inheritance): name, account_number, amount, interest_rate, units, v, value
+
+	BankAcct(Money)(class w/ inheritance): name, account_number, amount, interest_rate, adj_int, p, r, t, simple_interest
+
+	main(function): test(global), name, account, amount, interest
+
+	test_func(function): selection
+
+Functions:
+	main
+	
+	test_func
+Steps:
+
+	Import Decimal from decimal
+
+
+	Define class 'Money' passing in 'Decimal' for inheritance
+
+		Use __new__ to call the superclass version of __new__, pass in 'cls' to reference the class,
+    		'v' to reference the amount of money, and "units='USD'" to assign 'USD' to the money in said class
+
+			return the superclass version of __new__
+
+
+		Initialize variables 'v' and 'units'
+
+			Assign 'self.name' to the variable 'name'
+
+			Assign 'self.v' to the variable 'v'
+
+			Assign 'self.units' to the variable 'units'
+
+	
+	Define __str__(self) to return a formatted string containing 'self.v' and 'self.units'		
+
+		Return the formatted string containing 'self.v' and 'self.units'
+
+
+	Define __add__ passing in 'self' and 'value'
+
+		Add variables 'self.v' and 'value' and set 'self.v' equal to the result
+
+		Return the value of 'self'
+
+
+	Define __sub__ passing in 'self' and 'value'
+
+		Subtract variables 'self.v' and 'value' and set 'self.v' equal to the result
+
+		Return the value of 'self'
+
+	
+	Define class 'BankAcct' passing in 'Money' for inheritance
+
+
+		Initialize variables 'name', 'account_number', 'amount', and 'interest_rate'
+
+			Assign 'self.name' to variable 'name'
+			
+			Assign 'self.account_number' to variable 'account_number'
+
+			Assign 'self.amount' to variable 'amount' and convert it to a Decimal
+
+			Assign 'self.interest_rate' to variable 'interest_rate' and convert it to a Decimal
+
+
+		Define __str__(self) to display 'name', 'account_number', 'amount', and 'interest_rate' in a formatted manner
+
+			Return a formatted string containing key variables 'name', 'account_number', 'amount', and 'interest_rate'
+
+		
+		Define a method to change the interest rate named 'adjust_interest'
+
+			Set variable 'adj_int' equal to the input that the user wishes to
+        		change their interest rate to (convert it to a Decimal)
+
+			If/else statement, if adj_int is less than 0 or greater than 1.0
+
+				Print statement to let the user know the limitations to interest rates
+
+			If/else statement, else (the value of adj) int falls within 0 to 1.0
+
+				Print statement to inform the user that their Interest Rate has been updated
+
+				Set 'self.interest_rate' equal to 'adj_int' to update the account
+
+
+			Return a formatted string that displays the updated Interest Rate
+
+		
+		Define a method to calculate the accrued Interest within an entered amount of days
+
+			Set variable 'p' equal to 'self.amount', convert it to a Decimal if necessary
+
+			Set variable 'r' equal to 'self.interest_rate', convert it to a Decimal if necessary
+
+			Set variable 't' equal to the input from the user dictating the number of days
+        		they wish to calculate interest for, convert it to a Decimal if necessary
+
+			Set variable 'simple_interest' equal to equation (p * t * r)/100 ('principle' * 'time' * 'interest rate')/100
+
+			If/else statement, if their current balance is at or below zero print a statement
+        		to let them know they are not eligible for interest
+
+				Return string to inform user of the ineligibility of interest
+
+			If/else statement, if the user's account balance is not negative or zero,
+        		return a formatted string with the calculated interest
+
+				Return a formatted string with the calculated interest for their account
+
+
+		Define a method that will return the balance of the user's account
+
+			Return a formatted string displaying the current balance on the user's account
+
+	
+	Define function 'main'
+
+		Declare variable 'test' as a global variable
+
+		Print statement greeting the user
+
+		Set variable 'name' equal to a string from the user declaring their name
+
+		Set variable 'account' equal to a string from the user declaring their account number
+    		(up to 9 digits parameter just for flair, not implemented in any way)
+
+		Set variable 'account' equal to a string from the input of the 
+		user declaring the amount in their account converted to a Decimal
+
+		Set variable 'interest' equal to a string from the user declaring their interest rate
+
+		Set 'test' equal to class 'BankAcct' with the above variables passed in
+
+		Print 'test' to user to display 'general info' about their account
+
+	Call 'main'
+
+
+	Define function 'test_func' to test class 'BankAcct(Money)'
+
+		Print multiple strings that outline the services offered
+
+		Set variable 'selection' equal to the inputted value from the user (to make a selection from the given options)
+
+		If/elif/else statement, if 'selection' is '1' call the interest rate method
+
+			Call the 'interest_rate' method
+
+		Elif statement, if 'selection' is '2' call the interest prediction method
+
+       			Call the 'show_interest_prediction' method
+
+		Elif statement, if 'selection' is '3' call the 'add' method
+
+			Set variable 'v' equal to a string converted to a 'Decimal' that specifies how much the user would like to
+        		add to the existing amount of money
+
+			Print the result of variable 'test' added to variable 'v' through the 'add' method
+
+		Elif statement, if 'selection' is '4' call the 'sub' method
+
+	        	Set variable 'v' equal to a string converted to a 'Decimal' that specifies how much the user would like to
+       			subtract from the existing amount of money
+
+			Print the result of variable 'v' subtracted from variable 'test' through the 'sub' method
+
+		Elif statement, if 'selection' is '5' call the 'balance' method
+
+			Call the 'balance method'
+
+		Elif statement, if 'selection' is '6' print 'test' and show the general info for the account
+
+			Print 'test'
+
+		Elif statement, if 'selection' is '7' exit the program
+
+	        	Exit the program
+
+		Else statement, print 'That is not a valid selection and restart the test function
+
+			Print 'That is not a valid selection'
+			
+			Call 'test_func'
+
+		Call 'test_func'
+
+
+Call 'test_func'
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow

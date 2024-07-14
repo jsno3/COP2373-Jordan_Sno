@@ -1,0 +1,146 @@
+Jordan Snow 07/14/2024
+
+Description for Chapter 10, 10A:
+	The purpose of this program is to create a class named "Money" that inherits "Decimal"
+	and expands upon its functionality. The class has been extended to support basic addition,
+	subtraction, multiplication, and division. Also, two functions 'main' and 'test_func' have been
+	added to work in conjunction with one another to test the class's functionality and methods.
+
+Variables:
+	Money(Decimal)(class w/ inheritance): v, units, value
+
+	main(function): test(global) and v
+
+	test_func(function): selection and v
+
+Functions:
+	main
+	
+	test_func
+Steps:
+
+	Import Decimal from decimal
+
+
+	Define class 'Money' passing in 'Decimal' for inheritance
+
+
+		Use __new__ to call the superclass version of __new__, pass in 'cls' to reference the class,
+ 		'v' to reference the amount of money, and "units='USD'" to assign 'USD' to the money in said class
+
+			return the superclass version of __new__
+
+
+		Initialize variables 'v' and 'units'
+
+			Assign 'self.v' to the variable 'v'
+
+			Assign 'self.units' to the variable 'units'
+
+		
+		Define __str__(self) to return a formatted string containing 'self.v' and 'self.units'
+
+			Return the formatted string containing 'self.v' and 'self.units'
+
+		
+		Define __add__ passing in 'self' and 'value'
+
+			Add variables 'self.v' and 'value' and set 'self.v' equal to the result
+
+			Return the value of 'self'
+
+		
+		Define __sub__ passing in 'self' and 'value'
+
+			Subtract variables 'self.v' and 'value' and set 'self.v' equal to the result
+
+			Return the value of 'self'
+		
+		
+		Define __mul__ passing in 'self' and 'value'
+
+			Multiply variables 'self.v' any 'value' and set 'self.v' equal to the result
+
+			Return the value of 'self'
+
+
+		Define __truediv__ passing in 'self' and 'value'
+
+			Divide variable 'self.v' by 'value' and set 'self.v' equal to the result
+
+			Return the value of 'self'
+
+	
+	Define function 'main'
+
+		Declare variable 'test' as a global variable
+
+		Print statement greeting the user
+
+		Set variable 'v' equal to a string converted to a 'Decimal' from the user entering how much money they have
+
+		Set 'test' equal to class 'Money' with the 'v' passed in and 'units' set to 'USD'
+
+		Print 'test' to user to display how much money they have
+
+
+	Call 'main'
+
+
+	Define function 'test_func' to test class 'Money(Decimal)'
+
+		Print multiple strings that outline the methods available in this program
+
+		Set variable 'selection' equal to the inputted value from the user (to make a selection from the given options)
+
+		If/elif/else statement, if 'selection' is '1' call the 'add' method
+
+			Set variable 'v' equal to a string converted to a 'Decimal' that specifies how much the user would like to
+        		add to the existing amount of money
+
+			Print the result of variable 'test' added to variable 'v' through the 'add' method
+
+		Elif statement, if 'selection' is '2' call the 'sub' method
+
+       			Set variable 'v' equal to a string converted to a 'Decimal' that specifies how much the user would like to
+        		subtract from the existing amount of money
+
+			Print the result of variable 'v' subtracted from variable 'test' through the 'sub' method
+
+		Elif statement, if 'selection' is '3' call the 'mul' method
+
+			Set variable 'v' equal to a string converted to a 'Decimal' that specifies how much the user would like to
+        		multiply their existing amount of money by
+
+			Print the result of variable 'test' multiplied by variable 'v' through the 'mul' method
+
+		Elif statement, if 'selection' is '4' call the 'truediv' method
+
+	        	Set variable 'v' equal to a string converted to a 'Decimal' that specifies how much the user would like to
+        		divide their existing amount of money by
+
+			Print the result of variable 'test' divided by variable 'v' through the 'truediv' method
+        		(I used 'truediv' for better results with decimals and rounding)
+
+		Elif statement, if 'selection' is '5' print 'test' and show the user how much money they have
+
+			Print 'test'
+
+		Elif statement, if 'selection' is '6' exit the program
+
+	        	Exit the program
+
+		Else statement, print 'That is not a valid selection and restart the test function
+
+			Print 'That is not a valid selection'
+			
+			Call 'test_func'
+
+		Call 'test_func'
+
+
+Call 'test_func'
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow
