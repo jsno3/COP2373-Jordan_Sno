@@ -7,7 +7,7 @@ class Money(Decimal):
 
         return super(Money, cls).__new__(cls, v)
 
-    def __init__(self, v: float|int, units='USD'):
+    def __init__(self, v: Decimal, units='USD'):
 
         self.units = units
         self.v = v
@@ -40,7 +40,7 @@ def main():
     print('Hello! Welcome to the Money Moves Program!')
 
     # Set variable 'name' equal to a string from the user declaring their name
-    v = float(input('How much money do you have? '))
+    v = Decimal(input('How much money do you have? '))
 
     # Set variable 'account' equal to a string from the user declaring their account number
     # (up to 9 digits parameter just for flair, not implemented in any way)
@@ -73,7 +73,7 @@ def test_func():
     if selection == '1':
 
         # Print the 'add' method
-        x = float(input("Enter the amount you would like to add: "))
+        x = Decimal(input("Enter the amount you would like to add: "))
         print(test + x)
 
     # Elif statement, if 'selection' is '2' call the sub method
