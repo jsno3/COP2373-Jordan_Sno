@@ -27,7 +27,6 @@ class Money(Decimal):
         # Assign 'self.units' to the variable 'units'
         self.units = units
 
-
     # Define __str__(self) to return a formatted string containing 'self.v' and 'self.units'
     def __str__(self):
 
@@ -87,7 +86,7 @@ def main():
     test = Money(v=v, units='USD')
 
     # Print 'test' to user to display how much money they have
-    print('You are starting with', test)
+    print(test)
 
 
 # Call main
@@ -98,7 +97,7 @@ main()
 def test_func():
 
     # Print multiple strings that outline the methods available in this program
-    print('Please Make a Selection'
+    print('List of options for Money Program:'
           '\n1 - Addition '
           '\n2 - Subtraction '
           '\n3 - Multiplication '
@@ -106,7 +105,7 @@ def test_func():
           '\n5 - View Amount \n6 - Exit ')
 
     # Set variable 'selection' equal to the inputted value from the user (to make a selection from the given options)
-    selection = input('Enter the corresponding number to the action you wish to make: ')
+    selection = input('Please make a selection (enter numbers 1-6): ')
 
     # If/elif/else statement, if 'selection' is '1' call the add method
     if selection == '1':
