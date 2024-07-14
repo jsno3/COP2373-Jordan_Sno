@@ -13,7 +13,7 @@ class Money(Decimal):
         self.v = v
 
     def __str__(self):
-        return f'{self.v:.2f} {self.units}'
+        return f'You have {self.v:.2f} {self.units}'
 
     def __add__(self, value):
         self.v += value
@@ -80,20 +80,22 @@ def test_func():
     elif selection == '2':
 
         # Print the 'sub' method
-        print(test.show_interest_prediction())
+        x = Decimal(input("Enter the amount you would like to subtract: "))
+        print(test - x)
 
     # Elif statement, if 'selection' is '3' call the 'mul' method
     elif selection == '3':
 
         # Print the 'mul' method
-        print(test.withdraw())
+        x = Decimal(input("Enter the amount you would like to multiply your money by: "))
+        print(test * x)
 
     # Elif statement, if 'selection' is '4' call the 'truediv' method
     elif selection == '4':
 
         # Print the 'truediv' method
-        print(test.deposit())
-
+        x = Decimal(input("Enter the amount you would like to divide your money by: "))
+        print(test / x)
     # Elif statement, if 'selection' is '5' print 'test' and show the general info for the account
     elif selection == '5':
 
@@ -120,14 +122,3 @@ def test_func():
 
 # Call 'test_func'
 test_func()
-
-m = Money(1000.04, 'USD')
-print(m)
-
-print(m + 1)
-
-print(m - 1)
-
-print(m * 2.5)
-
-print(m / 2)
