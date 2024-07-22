@@ -19,7 +19,7 @@ def main():
     while True:
 
         # Set variable 'd' equal to the input from the user for the adjacent side's length (converted to a float)
-        d = float(input('Please enter the adjacent side's length (0 to exit): '))
+        d = float(input("Please enter the adjacent side's length (0 to exit): "))
 
         # While loop to ensure that the size of the nearest angle is larger than zero
         while d < 0:
@@ -28,7 +28,7 @@ def main():
             print('The length of the adjacent side must be greater than zero')
 
             # Set variable d equal to the input of the user for the adjacent side's length (converted to a float)
-            d = float(input('Please enter the adjacent side's length (0 to exit): '))
+            d = float(input("Please enter the adjacent side's length (0 to exit): "))
 
         # If statement - if d is equal to 0:
         if d == 0:
