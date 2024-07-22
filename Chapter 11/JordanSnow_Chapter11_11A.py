@@ -12,27 +12,37 @@ class Deck():
     # Initialize variable 'size'
     def __init__(self, size):
 
-        # Set
+        # Assign 'self.card_list' equal to i in the range of a specified size (defines the size of the deck)
         self.card_list = [i for i in range(size)]
 
-        # Shuffle
+        # Shuffle 'self.card_list' when initiated
         random.shuffle(self.card_list)
 
-
+        # Assign 'self.current_card' equal to 0
         self.current_card = 0
 
-
+        # Assign 'self.size' equal to 'size'
         self.size = size
 
     # Define deal
     def deal(self):
 
-        # If
+        # If the size of the deck is zero reshuffle the entire deck
         if self.size - self.current_card < 1:
+
+            # Random.shuffle(self.card_list) all 52 cards will be randomly rearranged
             random.shuffle(self.card_list)
+
+            # Set the current_card back to 0
             self.current_card = 0
+
+            # Print statement to let the user know the deck is being reshuffled
             print('Reshuffling...!!!')
+
+        # Set the current_card equal to 1 greater than it currently is
         self.current_card += 1
+
+        # return the value of the 'card_list' passing in the index the value of current_card - 1
         return self.card_list[self.current_card - 1]
 
 # Set variable 'ranks' equal to a list holding the face values of the cards
@@ -41,7 +51,7 @@ ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 # Set variable 'suits' equal to a list holding the suit of the cards
 suits = ['clubs', 'diamonds', 'hearts', 'spades']
 
-# Set variable 'my_deck' equal to a
+# Set variable 'my_deck' equal to class 'Deck' passing in '52' to specify the size of the deck
 my_deck = Deck(52)
 
 
@@ -66,7 +76,7 @@ def poker_hand():
         # For loop - for i in range(5)
         for i in range(5):
 
-            # Set variable 'd' equal to
+            # Set variable 'd' equal to the last 'card' in the simulated deck
             d = my_deck.deal()
 
             # Set variable 'r' equal to variable 'd' equal to modulo 13
@@ -132,10 +142,21 @@ def main():
 
             # Print statement to inform the user they can only draw up to three cards
             print('You can only draw up to three cards.')
+
+            # Set variable 'draw_amount' equal to the input from the user specifying how many cards they want to draw,
+            # convert the string to an integer
             draw_amount = int(input('Please tell me how many cards you would like to draw: '))
+
+        # For loop - for i in range(draw_amount)
         for i in range(draw_amount):
+
+            # Set variable 'd' equal to the value 0-51 from the 'deal' attribute
             d = my_deck.deal()
+
+            # Set variable 'r' equal to the value of variable 'd' modulo 13
             r = d % 13
+
+            # Set variable 's' equal to the value of variable 'd' floordiv 13
             s = d //13
             new_cards.append((ranks[r], suits[s]))
         replace_input = (input('Please enter the number(s) corresponding with your hand like to replace (1-5, format example: 1,2,3) '))
