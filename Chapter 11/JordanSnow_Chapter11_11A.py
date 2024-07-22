@@ -6,6 +6,7 @@ for up to 3 selected cards out of your hand to be exchanged for new ones out of 
 # Import random
 import random
 
+
 # Define class Deck
 class Deck():
 
@@ -45,6 +46,7 @@ class Deck():
         # return the value of the 'card_list' passing in the index the value of current_card - 1
         return self.card_list[self.current_card - 1]
 
+
 # Set variable 'ranks' equal to a list holding the face values of the cards
 ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 
@@ -76,13 +78,13 @@ def poker_hand():
         # For loop - for i in range(5)
         for i in range(5):
 
-            # Set variable 'd' equal to the last 'card' in the simulated deck
+            # Set variable 'd' equal to a value (0-51) within the simulated card deck
             d = my_deck.deal()
 
-            # Set variable 'r' equal to variable 'd' equal to modulo 13
+            # Set variable 'r' equal to variable 'd' modulo 13
             r = d % 13
 
-            # Set variable 's' equal to variable 'd' equal to floor div
+            # Set variable 's' equal to variable 'd' floor div
             s = d // 13
 
             # Set variable 'hand' equal to a tuple or the face value (ranks[r]) and suit (suits[s]) of the card
@@ -94,25 +96,26 @@ def poker_hand():
             cards[current_card] = hand
 
             # Print statement for testing
-            #print(cards[current_card])
+            # print(cards[current_card])
 
             # Print statement for testing
-            #print(type(hand))
+            # print(type(hand))
 
             # Set the value of current_card equal to 1 higher to prepare for next card
             current_card += 1
 
             # Print statement for testing
-            #print(current_card)
+            # print(current_card)
 
             # Delete
-            #cards[current_card] = ''
+            # cards[current_card] = ''
 
             # Print statement to format the cards in the user's hand
             print(ranks[r], 'of', suits[s])
 
         # Delete Print statement
-        #print()
+        # print()
+
 
 # Call poker_hand
 poker_hand()
@@ -150,31 +153,63 @@ def main():
         # For loop - for i in range(draw_amount)
         for i in range(draw_amount):
 
-            # Set variable 'd' equal to the value 0-51 from the 'deal' attribute
+            # Set variable 'd' equal to a value (0-51) within the simulated card deck
             d = my_deck.deal()
 
-            # Set variable 'r' equal to the value of variable 'd' modulo 13
+            # Set variable 'r' equal to variable 'd' modulo 13
             r = d % 13
 
-            # Set variable 's' equal to the value of variable 'd' floordiv 13
-            s = d //13
+            # Set variable 's' equal to variable 'd' floor div
+            s = d // 13
+
+            # Append the generated card's face value and suit inside a tuple to list 'new_cards'
             new_cards.append((ranks[r], suits[s]))
-        replace_input = (input('Please enter the number(s) corresponding with your hand like to replace (1-5, format example: 1,2,3) '))
+
+        # Set variable 'replace_input' equal to the input from the user specifying which cards they want replaced
+        replace_input = input('Please enter the number(s) corresponding with your hand like to replace '
+                              '(1-5, format example: 1,2,3) ')
+
+        # Set variable 'replace_indices' equal to an empty list
         replace_indices = []
 
+        # For loop - for num in string 'replace_input', split values at comma
         for num in replace_input.split(','):
+
+            # Append list 'replace_indices' with the value of 'num' converted to an integer
             replace_indices.append(int(num))
 
+        # For loop - for 'index' in the range of 'draw_amount'
         for index in range(draw_amount):
+
+            # Set variable 'replace_index' equal to list 'replace_indices' passing in 'index'
             replace_index = replace_indices[index]
+
+            # Update the dictionary 'cards' by setting the 'index' of the specified cards locations to the value
+            # of list 'new_cards' passing in the 'index' from the user
             cards[replace_index] = new_cards[index]
+
+        # Print statements - print a formatted version of the user's final hand
+        # Print statement displaying the first card in the user's hand
         print(f'{cards[1][0]} of {cards[1][1]}')
+
+        # Print statement displaying the second card in the user's hand
         print(f'{cards[2][0]} of {cards[2][1]}')
+
+        # Print statement displaying the third card in the user's hand
         print(f'{cards[3][0]} of {cards[3][1]}')
+
+        # Print statement displaying the fourth card in the user's hand
         print(f'{cards[4][0]} of {cards[4][1]}')
+
+        # Print statement displaying the fifth card in the user's hand
         print(f'{cards[5][0]} of {cards[5][1]}')
 
+    # Else statement
     else:
+
+        # Pass
         pass
 
+
+# Call main
 main()
