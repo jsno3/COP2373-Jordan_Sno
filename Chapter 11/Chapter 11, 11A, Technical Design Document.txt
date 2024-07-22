@@ -1,0 +1,172 @@
+Jordan Snow 07/21/2024
+
+Description for Chapter 11, 11A:
+	This program is intended to create a Deck class that simulates the shuffling and dealing of a standard set of
+	52 cards. The program will have an optional draw phase after the initial deal of 5 cards. This draw phase allows
+	for up to 3 selected cards out of your hand to be exchanged for new ones out of the deck.
+
+Variables:
+	Deck(class): size, card_list, current_card
+
+	values(function): ranks, suits, my_deck
+
+	poker_hand(function): cards(global), current_card, d, r, s, hand
+
+	main(function): cards(global), draw, new_cards, draw_amount, d, r, s, replace_input, replace_indices, replace_index
+
+Functions:
+	values
+	
+	poker_hand
+
+	main
+Steps:
+
+	import random
+
+
+	Define class Deck
+
+		Initialize variable 'size'
+
+		Assign 'self.card_list' equal to i in the range of a specified size (defines the size of the deck)
+
+		Shuffle 'self.card_list' when initiated
+
+		Assign 'self.current_card' equal to 0
+
+		Assign 'self.size' equal to 'size'
+
+	Define deal
+
+		If the size of the deck is zero reshuffle the entire deck
+
+			Random.shuffle(self.card_list) all 52 cards will be randomly rearranged
+
+			Set the current_card back to 0
+
+			Print statement to let the user know the deck is being reshuffled
+
+		Set the current_card equal to 1 greater than it currently is
+
+		return the value of the 'card_list' passing in the index the value of current_card - 1
+
+	
+	Define values
+
+		Set variable's 'ranks'
+
+		Set variable 'suits' to global
+
+		Set variable 'my_deck' to global
+
+		Set variable 'ranks' equal to a list holding the face values of the cards
+
+		Set variable 'suits' equal to a list holding the suit of the cards
+
+		Set variable 'my_deck' equal to class 'Deck' passing in '52' to specify the size of the deck
+
+
+	Call values
+
+
+	Define poker_hand to deal one poker hand
+
+		Set variable 'cards' to a global variable
+
+		Set variable 'current_card' equal to 1
+
+		Set variable 'cards' equal to an empty dictionary
+
+		Print statement to inform the user what their hand looks like
+
+		For loop - for i in range(1)
+
+			For loop - for i in range(5)
+
+				Set variable 'd' equal to a value (0-51) within the simulated card deck
+
+				Set variable 'r' equal to variable 'd' modulo 13
+
+				Set variable 's' equal to variable 'd' floor div
+
+				Set variable 'hand' equal to a tuple or the face value (ranks[r]) and suit (suits[s]) of the card
+            			that has been 'dealt'
+
+				Add the tuple generated and assigned to variable 'hand' (this is a card) to the current index of
+            			the dictionary 'cards' (to add the card to your hand)
+
+				Set the value of current_card equal to 1 higher to prepare for next card
+
+				Print statement to format the cards in the user's hand
+
+
+	Call poker_hand
+
+
+	Define main
+
+		Print statement to inform user that they can draw up to three cards
+
+		Set variable 'draw' equal to the input of the user to confirm if they want to draw or not
+
+		If statement - if variable 'draw' is equal to 'y'
+
+			Set variable 'new_cards' equal to an empty list
+
+			Set variable 'draw_amount' equal to the input from the user specifying how many cards they want to draw,
+        		convert the string to an integer
+
+			While statement - while variable 'draw_amount' is greater than 3 or less than or equal to 0
+
+				Print statement to inform the user they can only draw up to three cards
+
+				Set variable 'draw_amount' equal to the input from the user specifying how many cards they want to draw,
+            			convert the string to an integer
+
+			For loop - for i in range(draw_amount)
+
+				Set variable 'd' equal to a value (0-51) within the simulated card deck
+
+				Set variable 'r' equal to variable 'd' modulo 13
+
+				Set variable 's' equal to variable 'd' floor div
+
+				Append the generated card's face value and suit inside a tuple to list 'new_cards'
+
+			Set variable 'replace_input' equal to the input from the user specifying which cards they want replaced
+
+			Set variable 'replace_indices' equal to an empty list
+
+			For loop - for num in string 'replace_input', split values at comma
+
+				Append list 'replace_indices' with the value of 'num' converted to an integer
+
+			For loop - for 'index' in the range of 'draw_amount'
+
+				Set variable 'replace_index' equal to list 'replace_indices' passing in 'index'
+
+				Update the dictionary 'cards' by setting the 'index' of the specified cards locations to the value
+            			of list 'new_cards' passing in the 'index' from the user
+
+			Print statements - print a formatted version of the user's final hand
+        		Print statement displaying the first card in the user's hand
+
+			Print statement displaying the second card in the user's hand
+
+			Print statement displaying the third card in the user's hand
+
+			Print statement displaying the fourth card in the user's hand
+
+			Print statement displaying the fifth card in the user's hand
+
+		Else statement
+
+			Pass
+
+	Call main
+
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow
