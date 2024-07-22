@@ -6,11 +6,13 @@ and the length of the adjacent side.
 # Import cos & radians, from math
 from math import cos, radians
 
+
 # Define 'get_hypotenuse' passing in 'dist' and 'angle'
 def get_hypotenuse(dist, angle):
 
     # Return algorithm that uses cosine to determine the length of the hypotenuse
     return dist/cos(radians(angle))
+
 
 # Define main
 def main():
