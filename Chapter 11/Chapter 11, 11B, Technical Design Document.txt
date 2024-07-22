@@ -1,0 +1,59 @@
+Jordan Snow 07/21/2024
+
+Description for Chapter 11, 11B:
+	This program is intended to determine the length of the hypotenuse of a right triangle,
+	given two pieces of information from the user: the nearest angle, measured in degrees,
+	and the length of the adjacent side.
+
+Variables:
+	get_hypotenuse(function): dist, angle
+
+	main(function): d, a
+
+Functions:
+	get_hypotenuse
+
+	main
+Steps:
+
+	Import cos & radians, from math
+
+
+	Define 'get_hypotenuse' passing in 'dist' and 'angle'
+
+		Return algorithm that uses cosine to determine the length of the hypotenuse
+
+	Define main
+
+		While loop to continue program until the user enters '0'
+
+			Set variable 'd' equal to the input from the user for the adjacent side's length (converted to a float)
+
+			While loop to ensure that the size of the nearest angle is larger than zero
+
+				Print statement to inform user the length of the adjacent side needs to be greater than zero
+
+				Set variable d equal to the input of the user for the adjacent side's length (converted to a float)
+
+			If statement - if d is equal to 0:
+
+				Print statement to say goodbye
+
+				Break to end program
+
+			Set variable 'a' equal to the input from the user for the nearest angle (converted to a float)
+
+			While loop to ensure that the value of 'a' is greater than 0 or less than 90
+
+				Print statement to inform user the value of the nearest angle must be between 0 and 90 degrees
+
+				Set variable 'a' equal to the input from the user for the nearest angle (converted to a float)
+
+			Print statement
+
+	Call main
+
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow
