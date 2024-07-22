@@ -46,15 +46,29 @@ class Deck():
         # return the value of the 'card_list' passing in the index the value of current_card - 1
         return self.card_list[self.current_card - 1]
 
+def values():
 
-# Set variable 'ranks' equal to a list holding the face values of the cards
-ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    # Set variable's 'ranks'
+    global ranks
 
-# Set variable 'suits' equal to a list holding the suit of the cards
-suits = ['clubs', 'diamonds', 'hearts', 'spades']
+    # Set variable 'suits' to global
+    global suits
 
-# Set variable 'my_deck' equal to class 'Deck' passing in '52' to specify the size of the deck
-my_deck = Deck(52)
+    # Set variable 'my_deck' to global
+    global my_deck
+
+    # Set variable 'ranks' equal to a list holding the face values of the cards
+    ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+
+    # Set variable 'suits' equal to a list holding the suit of the cards
+    suits = ['clubs', 'diamonds', 'hearts', 'spades']
+
+    # Set variable 'my_deck' equal to class 'Deck' passing in '52' to specify the size of the deck
+    my_deck = Deck(52)
+
+
+# Call values
+values()
 
 
 # Define poker_hand to deal one poker hand
