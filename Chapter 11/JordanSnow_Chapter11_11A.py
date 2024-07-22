@@ -46,6 +46,8 @@ class Deck():
         # return the value of the 'card_list' passing in the index the value of current_card - 1
         return self.card_list[self.current_card - 1]
 
+
+# Define values
 def values():
 
     # Set variable's 'ranks'
