@@ -182,7 +182,7 @@ def main():
             new_cards.append((ranks[r], suits[s]))
 
         # Set variable 'replace_input' equal to the input from the user specifying which cards they want replaced
-        replace_input = input('Please enter the number(s) corresponding with your hand like to replace '
+        replace_input = input('Please enter the number(s) corresponding to your hand you want to replace '
                               '(1-5, format example: 1,2,3) ')
 
         # Set variable 'replace_indices' equal to an empty list
