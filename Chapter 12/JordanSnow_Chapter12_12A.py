@@ -30,6 +30,8 @@ def main():
 
     # print(column_3)
 
+    stats = ['Mean score', 'Median score', 'Standard Deviation', 'Minimum score', 'Maximum score']
+
     column_1_stats = []
 
     column_1_stats_fl = []
@@ -60,9 +62,13 @@ def main():
 
         column_1_stats_fl.append(round(float(i), 2))
 
-    print(column_1_stats_fl, '\n')
+    x = 0
 
+    for i in stats:
+        print(f'The {i} for Exam 1 was {column_1_stats_fl[x]}')
+        x += 1
 
+    print('\n')
 
     column_2_stats = []
 
@@ -93,7 +99,13 @@ def main():
     for i in column_2_stats:
         column_2_stats_fl.append(round(float(i), 2))
 
-    print(column_2_stats_fl, '\n')
+    x = 0
+
+    for i in stats:
+        print(f'The {i} for Exam 2 was {column_2_stats_fl[x]}')
+        x += 1
+
+    print('\n')
 
 
 
@@ -128,9 +140,13 @@ def main():
 
         column_3_stats_fl.append(round(float(i), 2))
 
+    x = 0
 
+    for i in stats:
+        print(f'The {i} for Exam 3 was {column_3_stats_fl[x]}')
+        x += 1
 
-    print(column_3_stats_fl, '\n')
+    print('\n')
 
 
     # 5
@@ -168,7 +184,13 @@ def main():
 
         all_exams_stats_fl.append(round(float(i), 2))
 
-    print(all_exams_stats_fl, '\n')
+    x = 0
+
+    for i in stats:
+        print(f'The {i} for all Exams was {all_exams_stats_fl[x]}')
+        x += 1
+
+    print('\n')
 
     # 6
     exam_1_pass = 0
