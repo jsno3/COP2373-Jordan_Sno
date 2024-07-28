@@ -137,8 +137,49 @@ pop_growth()
 # add_row()
 
 
-def diagram():
 
-    xpoints = np.array([2023, 2043])
-    ypoints = np.array([5000, 900000])
-    pass
+def choice():
+
+    global city
+
+    print('Pick a City that you would like to see the projected population growth of. (1-10)')
+
+    print('The following cities are available to select: ',
+          '\n1) Cape Coral',
+          '\n2) Dunedin',
+          '\n3) Gainesville',
+          '\n4) Jupiter',
+          '\n5) Largo'
+          '\n6) Miami',
+          '\n7) Okeechobee',
+          '\n8) Pensacola',
+          '\n9) St. Cloud',
+          '\n10) Winter Haven')
+
+    city = (int(input('Please make a selection. '))-1)
+
+
+choice()
+
+
+def diagram(city):
+
+    city_dic = {1:'Cape Coral', 2:'Dunedin', 3:'Gainesville', 4:'Jupiter', 5:'Largo', 6:'Miami', 7:'Okeechobee', 8:'Pensacola', 9:'St. Cloud', 10:'Winter Haven'}
+
+    print_city = city_dic[city]
+
+    print('Displaying the projected population growth of', print_city, 'across the next 20 years.')
+
+    initial = pop_list[city]
+    print(initial)
+
+    estimated = pop_growth_list[city]
+    print(estimated)
+
+    xpoints = np.array([1, 20])
+    ypoints = np.array([initial, estimated])
+    
+    plt.plot(xpoints, ypoints)
+    plt.show()
+
+diagram(city)
