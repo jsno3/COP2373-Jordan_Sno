@@ -30,7 +30,7 @@ def main():
 
     # print(column_3)
 
-    stats = ['Mean score', 'Median score', 'Standard Deviation', 'Minimum score', 'Maximum score']
+    stats = ['mean score', 'median score', 'standard deviation', 'minimum score', 'maximum score']
 
     column_1_stats = []
 
@@ -65,10 +65,10 @@ def main():
     x = 0
 
     for i in stats:
-        print(f'The {i} for Exam 1 was {column_1_stats_fl[x]}')
+        print(f'The {i} for exam 1 was {column_1_stats_fl[x]}')
         x += 1
 
-    print('\n')
+    print()
 
     column_2_stats = []
 
@@ -102,10 +102,10 @@ def main():
     x = 0
 
     for i in stats:
-        print(f'The {i} for Exam 2 was {column_2_stats_fl[x]}')
+        print(f'The {i} for exam 2 was {column_2_stats_fl[x]}')
         x += 1
 
-    print('\n')
+    print()
 
 
 
@@ -143,10 +143,10 @@ def main():
     x = 0
 
     for i in stats:
-        print(f'The {i} for Exam 3 was {column_3_stats_fl[x]}')
+        print(f'The {i} for exam 3 was {column_3_stats_fl[x]}')
         x += 1
 
-    print('\n')
+    print()
 
 
     # 5
@@ -187,10 +187,10 @@ def main():
     x = 0
 
     for i in stats:
-        print(f'The {i} for all Exams was {all_exams_stats_fl[x]}')
+        print(f'The {i} for all exams was {all_exams_stats_fl[x]}')
         x += 1
 
-    print('\n')
+    print()
 
     # 6
     exam_1_pass = 0
@@ -266,8 +266,8 @@ def main():
 
     all_exam_pass_percentage = ((all_exam_pass/(int(len(all_exams))))*100)
 
-    print(f'The overall pass percentage across all exams is {all_exam_pass_percentage}%\n')
+    print(f'The overall pass percentage across all exams is {all_exam_pass_percentage:.2f}%\n')
 
-    close = input('Hit enter to close the program. ')
+    # close = input('Hit enter to close the program. ')
 
 main()
