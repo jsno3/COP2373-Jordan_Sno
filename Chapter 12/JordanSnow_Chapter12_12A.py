@@ -1,51 +1,34 @@
 
-# from numpy import genfromtxt
-
 import numpy as np
-
-# class Calculations():
-#
-#     def __init__(self, mean, median, std, min, max):
-#
-#         self.mean = mean
-#
-#         self.median = median
-#
-#         self.std = std
-#
-#         self.min = min
-#
-#         self.max = max
-#
-#     def stats(self):
-#
-#         mean = np.mean()
 
 def main():
 
+    # 2
     array = np.genfromtxt('grades.csv', delimiter=',', dtype = str)
 
-    print(array)
+    # print(array)
 
-    print('Here are the first three lines of the array: \n', array[:3])
+    # 3
+    print('Here are the first three lines of the array: \n', array[:3], '\n')
 
+    # 4
     column_1 = array[1:, 2]
 
     column_1 = np.astype(column_1, 'i')
 
-    print(column_1)
+    # print(column_1)
 
     column_2 = array[1:, 3]
 
     column_2 = np.astype(column_2, 'i')
 
-    print(column_2)
+    # print(column_2)
 
     column_3 = array[1:, 4]
 
-    print(column_3)
-
     column_3 = np.astype(column_3, 'i')
+
+    # print(column_3)
 
     column_1_stats = []
 
@@ -77,7 +60,7 @@ def main():
 
         column_1_stats_fl.append(round(float(i), 2))
 
-    print(column_1_stats_fl)
+    print(column_1_stats_fl, '\n')
 
 
 
@@ -105,10 +88,14 @@ def main():
 
     column_2_stats.append(column_2_max)
 
+
+
     for i in column_2_stats:
         column_2_stats_fl.append(round(float(i), 2))
 
-    print(column_2_stats_fl)
+    print(column_2_stats_fl, '\n')
+
+
 
     column_3_stats = []
 
@@ -134,9 +121,129 @@ def main():
 
     column_3_stats.append(column_3_max)
 
+
+
+
     for i in column_3_stats:
+
         column_3_stats_fl.append(round(float(i), 2))
 
-    print(column_3_stats_fl)
+
+
+    print(column_3_stats_fl, '\n')
+
+
+    # 5
+    all_exams = np.concatenate((column_1, column_2, column_3), axis=0)
+
+    # print(all_exams)
+
+    all_exams_stats = []
+
+    all_exams_stats_fl = []
+
+    all_exams_stats_mean = np.mean(all_exams, axis=0)
+
+    all_exams_stats.append(all_exams_stats_mean)
+
+    all_exams_stats_median = np.median(all_exams, axis=0)
+
+    all_exams_stats.append(all_exams_stats_median)
+
+    all_exams_stats_std = np.std(all_exams, axis=0)
+
+    all_exams_stats.append(all_exams_stats_std)
+
+    all_exams_stats_min = np.min(all_exams, axis=0)
+
+    all_exams_stats.append(all_exams_stats_min)
+
+    all_exams_stats_max = np.max(all_exams, axis=0)
+
+    all_exams_stats.append(all_exams_stats_max)
+
+
+
+    for i in all_exams_stats:
+
+        all_exams_stats_fl.append(round(float(i), 2))
+
+    print(all_exams_stats_fl, '\n')
+
+    # 6
+    exam_1_pass = 0
+
+    exam_1_fail = 0
+
+    for grade in column_1:
+
+        if grade >= 60:
+
+            exam_1_pass += 1
+
+        if grade < 60:
+
+            exam_1_fail += 1
+
+    print(f'{exam_1_pass}/{(int(len(column_1)))} students passed the first exam.\n')
+
+    # print(exam_1_fail, 'students failed the first exam.')
+
+
+
+    exam_2_pass = 0
+
+    exam_2_fail = 0
+
+    for grade in column_2:
+
+        if grade >= 60:
+            exam_2_pass += 1
+
+        if grade < 60:
+            exam_2_fail += 1
+
+    print(f'{exam_2_pass}/{(int(len(column_2)))} students passed the second exam.\n')
+
+    # print(exam_2_fail, 'students failed the second exam.')
+
+
+
+    exam_3_pass = 0
+
+    exam_3_fail = 0
+
+    for grade in column_3:
+
+        if grade >= 60:
+            exam_3_pass += 1
+
+        if grade < 60:
+            exam_3_fail += 1
+
+    print(f'{exam_3_pass}/{(int(len(column_1)))} students passed the third exam.\n')
+
+    # print(exam_3_fail, 'students failed the third exam.')
+
+
+
+    # 7
+    all_exam_pass = 0
+
+    all_exam_fail = 0
+
+    for grade in all_exams:
+
+        if grade >= 60:
+            all_exam_pass += 1
+
+        if grade < 60:
+            all_exam_fail += 1
+
+    # print(all_exam_pass)
+
+    all_exam_pass_percentage = ((all_exam_pass/(int(len(all_exams))))*100)
+
+    print('The overall pass percentage across all exams is', all_exam_pass_percentage, '%')
 
 main()
