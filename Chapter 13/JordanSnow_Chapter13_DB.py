@@ -1,6 +1,10 @@
 
 import sqlite3
 
+import matplotlib.pyplot as plt
+
+import numpy as np
+
 def main():
 
     conn = sqlite3.connect('population_JS.db')
@@ -132,3 +136,9 @@ pop_growth()
 #
 # add_row()
 
+
+def diagram():
+
+    xpoints = np.array([2023, 2043])
+    ypoints = np.array([5000, 900000])
+    pass
