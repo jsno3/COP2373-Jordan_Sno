@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 
+
 def main():
 
     conn = sqlite3.connect('population_JS.db')
@@ -31,21 +32,23 @@ def add_population_table(cur):
                 Year INT(4),
                 Population INT(7))""")
 
+
 def add_population(cur):
     population_pop = [('Cape Coral', 2023, 224455),
-                  ('Dunedin', 2023, 35930),
-                  ('Gainesville', 2023, 145812),
-                  ('Jupiter', 2023, 61291),
-                  ('Largo', 2023, 82248),
-                  ('Miami', 2023, 455924),
-                  ('Okeechobee', 2023, 5602),
-                  ('Pensacola',2023, 53724),
-                  ('St. Cloud',2023, 66448),
-                  ('Winter Haven', 2023, 57109)]
+                      ('Dunedin', 2023, 35930),
+                      ('Gainesville', 2023, 145812),
+                      ('Jupiter', 2023, 61291),
+                      ('Largo', 2023, 82248),
+                      ('Miami', 2023, 455924),
+                      ('Okeechobee', 2023, 5602),
+                      ('Pensacola', 2023, 53724),
+                      ('St. Cloud', 2023, 66448),
+                      ('Winter Haven', 2023, 57109)]
 
     for row in population_pop:
         cur.execute('''INSERT INTO Population (City, Year, Population)
                        VALUES (?, ?, ?)''', (row[0], row[1], row[2]))
+
 
 # The display_population function displays the contents of the Population table
 def display_population(cur):
@@ -59,6 +62,7 @@ def display_population(cur):
     for row in results:
 
         print(f'{row[0]:15}{row[1]:0}{row[2]:10,.0f}')
+
 
 # Execute the main function.
 if __name__ == '__main__':
@@ -77,7 +81,7 @@ def pop():
 
     pop_list = []
 
-    for i in range(10):
+    for x in range(10):
 
         for i in cur.fetchone():
 
@@ -91,6 +95,7 @@ def pop():
 
     conn.close()
 
+
 pop()
 
 
@@ -100,9 +105,9 @@ def pop_growth():
 
     pop_growth_list = []
 
-    for int in pop_list:
+    for num in pop_list:
 
-        i = float(int)
+        i = float(num)
 
         t = 20
 
@@ -111,7 +116,6 @@ def pop_growth():
         for x in range(t):
 
             i *= (1.0 + r)
-
 
         i = round(i)
 
@@ -135,7 +139,6 @@ pop_growth()
 #                        VALUES (?)''', (row[3]))
 #
 # add_row()
-
 
 
 def choice():
@@ -164,9 +167,10 @@ choice()
 
 def diagram(city):
 
-    city_dic = {1:'Cape Coral', 2:'Dunedin', 3:'Gainesville', 4:'Jupiter', 5:'Largo', 6:'Miami', 7:'Okeechobee', 8:'Pensacola', 9:'St. Cloud', 10:'Winter Haven'}
+    city_dic = {1: 'Cape Coral', 2: 'Dunedin', 3: 'Gainesville', 4: 'Jupiter', 5: 'Largo',
+                6: 'Miami', 7: 'Okeechobee', 8: 'Pensacola', 9: 'St. Cloud', 10: 'Winter Haven'}
 
-    print_city = city_dic[city]
+    print_city = city_dic[city + 1]
 
     print('Displaying the projected population growth of', print_city, 'across the next 20 years.')
 
@@ -176,10 +180,11 @@ def diagram(city):
     estimated = pop_growth_list[city]
     print(estimated)
 
-    xpoints = np.array([1, 20])
-    ypoints = np.array([initial, estimated])
+    x_points = np.array([1, 20])
+    y_points = np.array([initial, estimated])
     
-    plt.plot(xpoints, ypoints)
+    plt.plot(x_points, y_points)
     plt.show()
+
 
 diagram(city)
