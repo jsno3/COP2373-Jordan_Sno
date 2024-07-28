@@ -244,6 +244,8 @@ def main():
 
     all_exam_pass_percentage = ((all_exam_pass/(int(len(all_exams))))*100)
 
-    print('The overall pass percentage across all exams is', all_exam_pass_percentage, '%')
+    print(f'The overall pass percentage across all exams is {all_exam_pass_percentage}%\n')
+
+    close = input('Hit enter to close the program. ')
 
 main()
