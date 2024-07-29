@@ -1,0 +1,161 @@
+Jordan Snow 07/28/2024
+
+Description for Chapter 13, 13_DB:
+	The purpose of this program is to create a database called population_JS that houses the following fields:
+	city, year, and population. 10 cities in Florida along with their populations in 2023 will then be inserted into 
+	population_JS as a table named 'Population'. After this table is created a function will pull the population 
+	statistics from the table and simulate population growth for 20 years at a 2% growth rate for each year. This 
+	data will then be inserted into the population table. Finally, matplotlib is used to display the population 
+	growth for a specified city in a graph.
+
+Variables:
+	main(function): conn, cur
+
+	add_population_table(function): cur
+
+	add_population(function): cur, population_pop
+
+	display_population(function): cur, results
+
+	add_growth_column_and_populate(function): conn, cur
+
+	choice(function): city(global), 
+
+	diagram(function): cur, city, city_dic, print_city, data, x_points, y_points
+
+Functions:
+
+	main
+
+	add_population_table
+
+	add_population
+
+	display_population
+
+	add_growth_column_and_populate
+
+	choice
+
+	diagram
+
+Steps:
+
+	Import sqlite3
+
+	Import matplotlib.pyplot as plt
+
+	Import numpy as np
+
+
+	Def main
+	
+    		Set variable 'conn' equal to sqlite3 connecting to database 'population_JS.db'
+
+	    	Set variable 'cur' equal to variable 'conn' using the cursor method
+
+	   	Call 'add_population_table' passing in variable 'cur'
+
+	    	Call 'add_population' passing in variable 'cur'
+
+	    	Commit the changes to the connection through variable 'conn'
+
+	    	Call 'display_population' passing in variable 'cur'
+
+	    	Call choice
+
+	    	Call add_growth_column_and_populate
+
+	   	Call 'diagram' passing in variables 'cur' and 'city
+
+	    	Close the connection
+
+
+	Define 'add_population_table' passing in variable 'cur'
+
+		Execute cursor to drop table if it already exists
+
+		Execute cursor to create a table named 'Population' that has three fields: 'City', 'Year', and 'Population'
+	
+	
+	Define 'add_population' passing in variable 'cur'
+	
+    		Set variable 'population_pop' equal to a list filled with the information for the table 'Population'
+
+	    	For loop
+    		For row in 'population_pop'
+    
+    		    	Execute cursor to insert list 'population_pop' into table 'Population'
+
+
+	The display_population function displays the contents of the Population table
+
+    		Print statement explaining to the user where the table is from
+
+	    	Execute cursor to select everything from the table 'Population'
+
+		Set variable 'results' equal to cursor using the 'fetchall' method
+
+	    	For loop
+	    	For row in variable 'results'
+    
+    		    	Formatted print statement to display the information from table 'Population'
+
+	
+	Define add_growth_column_and_populate
+
+	    	Set variable 'conn' equal to sqlite3 connecting to database 'population_JS.db'
+
+		Set variable 'cur' equal to variable 'conn' using the cursor method
+
+		Execute cursor to alter table 'Population' and add 'Projected_Population' expecting data type integer
+
+	    	Execute cursor to update table 'Population' with the projected population growth set to 'Projected_Population'
+
+	    	Commit the changes to the connection through variable 'conn'
+
+	    	Close the connection
+
+
+	Define choice
+
+    		Set variable 'city' to global
+    
+		Print statement to inform the user to pick a city
+   
+    		Print statement to inform the user what citys are available in the table
+    	
+		Set variable 'city' equal to the input from the user converted to an integer
+	
+
+	Define diagram passing in variables 'cur' and 'city'
+
+		Set variable 'city_dic' equal to a dictionary full of the cities from the table along with corresponding keys
+
+    		Set variable 'print_city' equal to the value from dictionary 'city_dic' passing in the key that the user entered
+
+    		Print statement to inform the user which city's population growth they are viewing
+
+    		Execute cursor on formatted string to pull 'Population' and 'Projected_Population' from the specified city
+    
+    		Set variable 'data' equal to cursor using the method fetchone
+
+   		Print variable 'data'
+
+    		Set variable 'x_points' equal to a numpy array ranging from 1 to 20
+
+    		Set variable 'y_points' equal to a numpy array ranging from the values
+    		'data[0]' to 'data[1]' converted to integers
+
+    		Create a graph defining the x-axis as 'x_points' and the y-axis as 'y_points'
+
+    		Show the graph that has been created
+
+
+	Execute the main function.
+
+
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow
