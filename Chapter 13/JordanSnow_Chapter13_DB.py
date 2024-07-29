@@ -185,7 +185,7 @@ def diagram(cur, city):
     x_points = np.array([1, 20])
 
     # Set variable 'y_points' equal to a numpy array ranging from the values
-    # 'data[0]' to 'data[1] converted to integers'
+    # 'data[0]' to 'data[1]' converted to integers
     y_points = np.array([int(data[0]), int(data[1])])
 
     # Create a graph defining the x-axis as 'x_points' and the y-axis as 'y_points'
