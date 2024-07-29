@@ -255,26 +255,31 @@ def main():
     # Set variable 'all_exams_stats_mean' equal to the calculated mean of all exam columns
     all_exams_stats_mean = np.mean(all_exams, axis=0)
 
+    # Append list 'all_exams_stats' with the result of 'all_exams_stats_mean'
     all_exams_stats.append(all_exams_stats_mean)
 
     # Set variable 'all_exams_stats_median' equal to the calculated median of all exam columns
     all_exams_stats_median = np.median(all_exams, axis=0)
 
+    # Append list 'all_exams_stats' with the result of 'all_exams_stats_median'
     all_exams_stats.append(all_exams_stats_median)
 
     # Set variable 'all_exams_stats_std' equal to the calculated standard deviation of all exam columns
     all_exams_stats_std = np.std(all_exams, axis=0)
 
+    # Append list 'all_exams_stats' with the result of 'all_exams_stats_std'
     all_exams_stats.append(all_exams_stats_std)
 
     # Set variable 'all_exams_stats_min' equal to the calculated minimum value from all exam columns
     all_exams_stats_min = np.min(all_exams, axis=0)
 
+    # Append list 'all_exams_stats' with the result of 'all_exams_stats_min'
     all_exams_stats.append(all_exams_stats_min)
 
     # Set variable 'all_exams_stats_max' equal to the calculated maximum value from all exam columns
     all_exams_stats_max = np.max(all_exams, axis=0)
 
+    # Append list 'all_exams_stats' with the result of 'all_exams_stats_max'
     all_exams_stats.append(all_exams_stats_max)
 
     # For loop

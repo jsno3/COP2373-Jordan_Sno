@@ -1,0 +1,328 @@
+Jordan Snow 07/28/2024
+
+Description for Chapter 12, 12A:
+	This program is intended to utilize numpy to analyze grades stored in a CSV file. The program will find and display 
+	mean, median, standard deviation, minimum, and maximum scores amongst the grades and display them according to the 
+	sample size (individual exam or combined exams). This program will also determine the number of students that passed 
+	each exam and display this information in integer form per exam. Finally, the program will calculate the pass percentage 
+	across all exams and display it.
+
+Variables:
+	
+	main: array, column_1, column_2, column_3, stats, column_1_stats, column_1_stats_fl, column_1_mean, 
+	      column_1_median, column_1_std, column_1_min, column_1_max, x, column_2_stats, column_2_stats_fl, 
+	      column_2_mean, column_2_median, column_2_std, column_2_min, column_2_max, column_3_stats, column_3_stats_fl, 
+	      column_3_mean, column_3_median, column_3_std, column_3_min, column_3_max, all_exams, all_exams_stats, 
+	      all_exams_stats_fl, all_exams_stats_mean, all_exams_stats_median, all_exams_stats_std, all_exams_stats_min,
+	      all_stats_max, exam_1_pass, exam_1_fail, exam_2_pass, exam_2_fail, exam_3_pass, exam_3_fail, all_exam_pass, 
+	      all_exam_fail, all_exam_pass_percentage
+
+Functions:
+
+	main
+Steps:
+
+	Define main
+
+		2
+    		Set variable 'array' equal to a numpy array pulling data from file 'grades.csv', setting the delimiter as a comma,
+    		and the date type as a string
+
+		Test print statement to ensure array is properly formatted
+    		print(array)
+
+		3
+    		Formatted print statement to display to the user the organization of the array
+    		(first three lines including the headers)
+
+		4
+    		Set variable 'column_1' equal to the Exam 1 column of the numpy array 'array'
+
+		Update variable 'column_1' with the converted version of the data pulled from 'array' (converted to an integer)
+
+		Test print statement to ensure the converted version is correct
+
+		Set variable 'column_2' equal to the Exam 2 column of the numpy array 'array'
+
+		Update variable 'column_2' with the converted version of the data pulled from 'array' (converted to an integer)
+
+		Test print statement to ensure the converted version is correct
+
+		Set variable 'column_3' equal to the Exam 3 column of the numpy array 'array'
+
+		Update variable 'column_3' with the converted version of the data pulled from 'array' (converted to an integer)
+
+		Test print statement to ensure the converted version is correct
+
+		Set variable 'stats' equal to a list containing strings that will be used for multiple print statements
+
+		Set variable 'column_1_stats' equal to an empty list
+
+		Set variable 'column_1_stats_fl' equal to an empty list
+
+		Set variable 'column_1_mean' equal to the calculated mean of the Exam 1 column
+
+		Append list 'column_1_stats' with variable 'column_1_mean'
+
+		Set variable 'column_1_median' equal to the calculated median of the Exam 1 column
+
+		Append list 'column_1_stats' with variable 'column_1_median'
+
+		Set variable 'column_1_std' equal to the calculated standard deviation of the Exam 1 column
+
+		Append list 'column_1_stats' with variable 'column_1_std'
+
+		Set variable 'column_1_min' equal to the calculated minimum value of the Exam 1 column
+
+		Append list 'column_1_stats' with variable 'column_1_min'
+
+		Set variable 'column_1_max' equal to the calculated maximum value of the Exam 1 column
+
+		Append list 'column_1_stats' with variable 'column_1_max'
+
+		For loop
+    		For i in list 'column_1_stats'
+
+			Append the list 'column_1_stats_fl' with the rounded and formatted values from list 'column_1_stats'
+
+		Set variable 'x' equal to 0 to be used as a counter
+
+		For loop
+    		For i in list 'stats'
+
+			Formatted print statement that pulls strings from list 'stats' and floats from list 'column_1_stats' to
+        		display the statistical calculations for Exam 1
+
+			Counter to iterate through list 'column_1_stats_fl'
+        		variable x+= 1
+
+		Empty print statement to insert a new line
+
+		Set variable 'column_2_stats' equal to an empty list
+
+		Set variable 'column_2_stats_fl' equal to an empty list
+
+		Set variable 'column_2_mean' equal to the calculated mean of the Exam 2 column
+
+		Append list 'column_2_stats' with variable 'column_2_mean'
+
+		Set variable 'column_2_median' equal to the calculated median of the Exam 2 column
+
+		Append list 'column_2_stats' with variable 'column_2_median'
+
+		Set variable 'column_2_std' equal to the calculated standard deviation of the Exam 2
+
+		Append list 'column_2_stats' with variable 'column_2_std'
+
+		Set variable 'column_2_min' equal to the calculated minimum value of the Exam 2
+
+		Append list 'column_2_stats' with variable 'column_2_min'
+
+		Set variable 'column_2_max' equal to the calculated maximum value of the Exam 2
+
+		Append list 'column_2_stats' with variable 'column_2_max'
+
+		For loop
+    		For i in list 'column_2_stats'
+
+			Append the list 'column_2_stats_fl' with the rounded and formatted values from list 'column_2_stats'
+
+		Set variable 'x' equal to 0 to be used as a counter
+
+		For loop
+    		For i in list 'stats'
+
+			Formatted print statement that pulls strings from list 'stats' and floats from list 'column_2_stats_fl' to
+        		display the statistical calculations for Exam 2
+
+			Counter to iterate through list 'column_2_stats_fl'
+        		variable x+= 1
+
+		Empty print statement to insert a new line
+
+		Empty print statement to insert a new line
+   		
+		Set variable 'column_3_stats' equal to an empty list
+
+    		Set variable 'column_3_stats_fl' equal to an empty list
+
+    		Set variable 'column_3_mean' equal to the calculated mean of the Exam 3 column
+
+    		Append list 'column_3_stats' with variable 'column_3_mean'
+
+    		Set variable 'column_3_median' equal to the calculated median of the Exam 3 column
+
+		Append list 'column_3_stats' with variable 'column_3_median'
+
+    		Set variable 'column_3_std' equal to the calculated standard deviation of the Exam 3
+
+    		Append list 'column_3_stats' with variable 'column_3_std'
+
+		Set variable 'column_3_min' equal to the calculated minimum value of the Exam 3
+
+		Append list 'column_3_stats' with variable 'column_3_min'
+
+		Set variable 'column_3_max' equal to the calculated maximum value of the Exam 3
+		
+		Append list 'column_3_stats' with variable 'column_3_max'
+
+		For loop
+    		For i in list 'column_3_stats'
+		
+			Append the list 'column_3_stats_fl' with the rounded and formatted values from list 'column_3_stats'
+
+		Set variable 'x' equal to 0 to be used as a counter
+		
+		For loop
+		For i in list 'stats'	
+
+			Formatted print statement that pulls strings from list 'stats' and floats from list 'column_3_stats_fl' to
+        		display the statistical calculations for Exam 3
+
+			Counter to iterate through list 'column_3_stats_fl'
+        		variable x+= 1
+
+		Empty print statement to insert a new line
+		
+		5
+		Set variable 'all_exams' equal to the value of the concatenation of all three exam columns
+
+		Test print statement to ensure all_exams is correct
+
+		Set variable 'all_exams_stats' equal to an empty list
+    
+    		Set variable 'all_exams_stats_fl' equal to an empty list
+    
+    		Set variable 'all_exams_stats_mean' equal to the calculated mean of all exam columns
+    
+ 		Append list 'all_exams_stats' with the result of 'all_exams_stats_mean'
+
+   		Set variable 'all_exams_stats_median' equal to the calculated median of all exam columns
+
+    		Append list 'all_exams_stats' with the result of 'all_exams_stats_median'
+
+    		Set variable 'all_exams_stats_std' equal to the calculated standard deviation of all exam columns
+
+    		Append list 'all_exams_stats' with the result of 'all_exams_stats_std'
+
+    		Set variable 'all_exams_stats_min' equal to the calculated minimum value from all exam columns
+
+    		Append list 'all_exams_stats' with the result of 'all_exams_stats_min'
+
+    		Set variable 'all_exams_stats_max' equal to the calculated maximum value from all exam columns
+    
+    		Append list 'all_exams_stats' with the result of 'all_exams_stats_max'
+
+		For loop
+    		For i in list 'all_exams_stats'
+
+			Append the list 'all_exams_stats_fl' with the rounded and formatted values from list 'all_exams_stats'
+
+		Set variable 'x' equal to 0 to be used as a counter
+
+		For loop
+    		For i in list 'stats'
+
+			Formatted print statement that pulls strings from list 'stats' and floats from list 'all_exams_stats_fl' to
+        		display the statistical calculations across all exams		
+
+			Counter to iterate through list 'all_exams_stats_fl'
+
+		Empty print statement to insert a new line
+
+		6
+    		Set variable 'exam_1_pass' equal to 0 to be used as a counter
+
+		Set variable 'exam_1_fail' equal to 0 to be used as a counter
+
+		For loop
+    		For grade in list 'column_1'
+
+			If statement
+        		If grade is greater or equal to 60
+
+				Add 1 passing grade to the list 'exam_1_pass'
+		
+			If statement
+        		If grade is less than 60
+
+				Add 1 failing grade to the list 'exam_1_fail'
+
+		Formatted print statement to show the amount of students that passed the first exam out of 10
+
+		Test print statement to print the amount of students failed for assurance
+
+		Set variable 'exam_2_pass' equal to 0 to be used as a counter
+
+    		Set variable 'exam_2_fail' equal to 0 to be used as a counter
+
+    		For loop
+   		For grade in list 'column_2'
+
+			If statement
+        		If grade is greater or equal to 60
+
+				Add passing grade to the list 'exam_2_pass'
+
+		If statement
+        	If grade is less than 60
+
+			Add failing grade to the list 'exam_2_fail'
+
+		Formatted print statement to show the amount of students that passed the second exam out of 10
+
+		Test print statement to print the amount of students failed for assurance
+
+		Set variable 'exam_2_pass' equal to 0 to be used as a counter
+		
+		Set variable 'exam_2_fail' equal to 0 to be used as a counter
+
+		For loop
+    		For grade in list 'column_3'
+
+			If statement
+        		If grade is greater or equal to 60
+
+				Add passing grade to the list 'exam_3_pass'
+
+			If statement
+        		If grade is less than 60
+
+				Add failing grade to the list 'exam_3_fail'
+
+		Formatted print statement to show the amount of students that passed the third exam out of 10
+
+		Test print statement to print the amount of students failed for assurance
+
+		7
+    		Set variable 'all_exam_pass' equal to 0 to be used as a counter
+
+		Set variable 'all_exam_fail' equal to 0 to be used as a counter
+
+		For loop
+   		For grade in list 'all_exams'
+
+			If statement
+        		If grade is greater or equal to 60
+
+				Add passing grade to the list 'all_exam_pass'
+
+			If statement
+        		If grade is less than 60
+
+				Add failing grade to the list 'all_exam_fail'
+
+		Test print statement to print the amount of students failed across all exams for assurance
+
+		Set variable 'all_exam_pass_percentage' equal to the calculated value of variable 'all_exam_pass'
+    		divided by the value of all exams taken multiplied by 100
+
+		Formatted print statement to display the variable 'all_exam_pass_percentage' rounded off to two decimals
+
+
+	Call main
+
+
+
+COP2373 Repository link:
+	https://github.com/jsno3/COP2373-Jordan_Snow
