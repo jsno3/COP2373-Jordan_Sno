@@ -8,13 +8,14 @@
 # Import numpy as np
 import numpy as np
 
+
 # Define main
 def main():
 
     # 2
     # Set variable 'array' equal to a numpy array pulling data from file 'grades.csv', setting the delimiter as a comma,
     # and the date type as a string
-    array = np.genfromtxt('grades.csv', delimiter=',', dtype = str)
+    array = np.genfromtxt('grades.csv', delimiter=',', dtype=str)
 
     # Test print statement to ensure array is properly formatted
     # print(array)
@@ -238,126 +239,194 @@ def main():
     # Empty print statement to insert a new line
     print()
 
-
     # 5
+    # Set variable 'all_exams' equal to the value of the concatenation of all three exam columns
     all_exams = np.concatenate((column_1, column_2, column_3), axis=0)
 
+    # Test print statement to ensure all_exams is correct
     # print(all_exams)
 
+    # Set variable 'all_exams_stats' equal to an empty list
     all_exams_stats = []
 
+    # Set variable 'all_exams_stats_fl' equal to an empty list
     all_exams_stats_fl = []
 
+    # Set variable 'all_exams_stats_mean' equal to the calculated mean of all exam columns
     all_exams_stats_mean = np.mean(all_exams, axis=0)
 
     all_exams_stats.append(all_exams_stats_mean)
 
+    # Set variable 'all_exams_stats_median' equal to the calculated median of all exam columns
     all_exams_stats_median = np.median(all_exams, axis=0)
 
     all_exams_stats.append(all_exams_stats_median)
 
+    # Set variable 'all_exams_stats_std' equal to the calculated standard deviation of all exam columns
     all_exams_stats_std = np.std(all_exams, axis=0)
 
     all_exams_stats.append(all_exams_stats_std)
 
+    # Set variable 'all_exams_stats_min' equal to the calculated minimum value from all exam columns
     all_exams_stats_min = np.min(all_exams, axis=0)
 
     all_exams_stats.append(all_exams_stats_min)
 
+    # Set variable 'all_exams_stats_max' equal to the calculated maximum value from all exam columns
     all_exams_stats_max = np.max(all_exams, axis=0)
 
     all_exams_stats.append(all_exams_stats_max)
 
-
-
+    # For loop
+    # For i in list 'all_exams_stats'
     for i in all_exams_stats:
 
+        # Append the list 'all_exams_stats_fl' with the rounded and formatted values from list 'all_exams_stats'
         all_exams_stats_fl.append(round(float(i), 2))
 
+    # Set variable 'x' equal to 0 to be used as a counter
     x = 0
 
+    # For loop
+    # For i in list 'stats'
     for i in stats:
+
+        # Formatted print statement that pulls strings from list 'stats' and floats from list 'all_exams_stats_fl' to
+        # display the statistical calculations across all exams
         print(f'The {i} for all exams was {all_exams_stats_fl[x]}')
+
+        # Counter to iterate through list 'all_exams_stats_fl'
         x += 1
 
+    # Empty print statement to insert a new line
     print()
 
     # 6
+    # Set variable 'exam_1_pass' equal to 0 to be used as a counter
     exam_1_pass = 0
 
+    # Set variable 'exam_1_fail' equal to 0 to be used as a counter
     exam_1_fail = 0
 
+    # For loop
+    # For grade in list 'column_1'
     for grade in column_1:
 
+        # If statement
+        # If grade is greater or equal to 60
         if grade >= 60:
 
+            # Add 1 passing grade to the list 'exam_1_pass'
             exam_1_pass += 1
 
+        # If statement
+        # If grade is less than 60
         if grade < 60:
 
+            # Add 1 failing grade to the list 'exam_1_fail'
             exam_1_fail += 1
 
+    # Formatted print statement to show the amount of students that passed the first exam out of 10
     print(f'{exam_1_pass}/{(int(len(column_1)))} students passed the first exam.\n')
 
+    # Test print statement to print the amount of students failed for assurance
     # print(exam_1_fail, 'students failed the first exam.')
 
-
-
+    # Set variable 'exam_2_pass' equal to 0 to be used as a counter
     exam_2_pass = 0
 
+    # Set variable 'exam_2_fail' equal to 0 to be used as a counter
     exam_2_fail = 0
 
+    # For loop
+    # For grade in list 'column_2'
     for grade in column_2:
 
+        # If statement
+        # If grade is greater or equal to 60
         if grade >= 60:
+
+            # Add passing grade to the list 'exam_2_pass'
             exam_2_pass += 1
 
+        # If statement
+        # If grade is less than 60
         if grade < 60:
+
+            # Add failing grade to the list 'exam_2_fail'
             exam_2_fail += 1
 
+    # Formatted print statement to show the amount of students that passed the second exam out of 10
     print(f'{exam_2_pass}/{(int(len(column_2)))} students passed the second exam.\n')
 
+    # Test print statement to print the amount of students failed for assurance
     # print(exam_2_fail, 'students failed the second exam.')
 
-
-
+    # Set variable 'exam_2_pass' equal to 0 to be used as a counter
     exam_3_pass = 0
 
+    # Set variable 'exam_2_fail' equal to 0 to be used as a counter
     exam_3_fail = 0
 
+    # For loop
+    # For grade in list 'column_3'
     for grade in column_3:
 
+        # If statement
+        # If grade is greater or equal to 60
         if grade >= 60:
+
+            # Add passing grade to the list 'exam_3_pass'
             exam_3_pass += 1
 
+        # If statement
+        # If grade is less than 60
         if grade < 60:
+
+            # Add failing grade to the list 'exam_3_fail'
             exam_3_fail += 1
 
+    # Formatted print statement to show the amount of students that passed the third exam out of 10
     print(f'{exam_3_pass}/{(int(len(column_1)))} students passed the third exam.\n')
 
+    # Test print statement to print the amount of students failed for assurance
     # print(exam_3_fail, 'students failed the third exam.')
 
-
-
     # 7
+    # Set variable 'all_exam_pass' equal to 0 to be used as a counter
     all_exam_pass = 0
 
+    # Set variable 'all_exam_fail' equal to 0 to be used as a counter
     all_exam_fail = 0
 
+    # For loop
+    # For grade in list 'all_exams'
     for grade in all_exams:
 
+        # If statement
+        # If grade is greater or equal to 60
         if grade >= 60:
+
+            # Add passing grade to the list 'all_exam_pass'
             all_exam_pass += 1
 
+        # If statement
+        # If grade is less than 60
         if grade < 60:
+
+            # Add failing grade to the list 'all_exam_fail'
             all_exam_fail += 1
 
+    # Test print statement to print the amount of students failed across all exams for assurance
     # print(all_exam_pass)
 
+    # Set variable 'all_exam_pass_percentage' equal to the calculated value of variable 'all_exam_pass'
+    # divided by the value of all exams taken multiplied by 100
     all_exam_pass_percentage = ((all_exam_pass/(int(len(all_exams))))*100)
 
+    # Formatted print statement to display the variable 'all_exam_pass_percentage' rounded off to two decimals
     print(f'The overall pass percentage across all exams is {all_exam_pass_percentage:.2f}%\n')
 
-    # close = input('Hit enter to close the program. ')
 
+# Call main
 main()
